@@ -1,0 +1,327 @@
+/* styles.css */
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--background-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+    position: relative; /* Allow for absolute positioning of footer */
+    padding-bottom: 60px; /* Make space for the footer */
+}
+
+:root {
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --header-background: #4a90e2;
+    --header-text-color: white;
+    --footer-background: #4a90e2;
+    --footer-text-color: white;
+    --button-background: #4a90e2;
+    --button-text-color: white;
+    --skill-bar-background: #ddd;
+    --skill-bar-color: #4a90e2;
+}
+
+body.dark-theme {
+    --background-color: #2d2d2d;
+    --text-color: #ccc;
+    --header-background: #1a1a1a;
+    --header-text-color: #ccc;
+    --footer-background: #1a1a1a;
+    --footer-text-color: #ccc;
+    --button-background: #333;
+    --button-text-color: #ccc;
+    --skill-bar-background: #555;
+    --skill-bar-color: #1a1a1a;
+}
+
+header {
+    background: var(--header-background);
+    color: var(--header-text-color);
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, color 0.3s;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: var(--header-text-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background: var(--header-text-color);
+    color: var(--header-background);
+    border-radius: 5px;
+}
+
+#theme-toggle {
+    background: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+#theme-toggle:hover {
+    background: var(--header-text-color);
+    color: var(--header-background);
+}
+
+section {
+    padding: 4em 2em;
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6em;
+    margin-bottom: 1.5em;
+}
+
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #f0f0f0; /* Adjust background color as needed */
+    box-sizing: border-box;
+    padding: 20px; /* Optional padding for some space around the content */
+}
+
+.home {
+    text-align: center;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Adjust background color as needed */
+    box-sizing: border-box;
+    padding: 20px; /* Optional padding for some space around the content */
+    user-select: none;
+}
+
+.rounded-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+
+.project {
+    background: white;
+    padding: 1.5em;
+    margin: 1em 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+footer {
+    background: var(--footer-background);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form label {
+    margin-top: 1em;
+    width: 100%;
+    text-align: left;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--button-background);
+}
+
+form button {
+    background: var(--button-background);
+    color: var(--button-text-color);
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: var(--header-text-color);
+    color: var(--header-background);
+}
+
+.contact-link {
+    color: var(--button-text-color);
+    text-decoration: none;
+}
+
+.contact-link i {
+    font-size: 1.5em;
+}
+
+.contact-link:hover {
+    opacity: 0.7;
+}
+
+/* Skills Section */
+.skill-bar {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.skill {
+    margin: 1em 0;
+    background: var(--skill-bar-background);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    height: 2em;
+}
+
+.skill::before {
+    content: attr(data-skill);
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color);
+}
+
+.skill::after {
+    content: '';
+    display: block;
+    height: 100%;
+    background: var(--skill-bar-color);
+    width: 0;
+    transition: width 1s;
+}
+
+.skill[data-percentage="90"]::after { width: 90%; }
+.skill[data-percentage="85"]::after { width: 85%; }
+.skill[data-percentage="80"]::after { width: 80%; }
+.skill[data-percentage="75"]::after { width: 75%; }
+.skill[data-percentage="70"]::after { width: 70%; }
+.skill[data-percentage="95"]::after { width: 95%; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    section {
+        padding: 3em 1em;
+    }
+}
+
+/* Background Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* .background-animation {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--button-background);
+    border-radius: 50%;
+    animation: float 3s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+.background-animation:not(footer .background-animation) {
+    top: 10%;
+    left: 10%;
+} */
