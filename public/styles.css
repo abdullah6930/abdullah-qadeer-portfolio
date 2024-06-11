@@ -64,6 +64,20 @@ header h1 {
     font-size: 1.5em;
 }
 
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -74,6 +88,7 @@ nav ul {
 
 nav ul li {
     margin: 0 1em;
+    align-content: center;
 }
 
 nav ul li a {
@@ -97,11 +112,13 @@ nav ul li a:hover {
     padding: 0.5em 1em;
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
+    font-size: 1em;
 }
 
 #theme-toggle:hover {
     background: var(--header-text-color);
     color: var(--header-background);
+    border-radius: 5px;
 }
 
 section {
@@ -143,7 +160,7 @@ p {
     width: 100%;
     background: var(--skill-bar-background);
     box-sizing: border-box;
-    /*padding: 20px;*/ /* Optional padding for some space around the content */
+    padding: 20px; /* Optional padding for some space around the content */
 }
 
 .home {
@@ -285,6 +302,42 @@ form button:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        color: var(--header-text-color);
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: var(--header-background);
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 200px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1em;
+    }
+
+    .nav-list li {
+        margin: 0.5em 0;
+        width: 100%;
+    }
+
+    .nav-list li a, .nav-list li button {
+        width: 100%;
+        text-align: left;
+    }
+
+    nav.show {
+        display: block;
+    }
+
     nav ul {
         flex-direction: column;
     }

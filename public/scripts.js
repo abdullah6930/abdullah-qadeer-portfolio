@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const LIGHT_THEME_CLASS = 'light-theme';
     currentTheme = 0;
 
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('nav');
+
+    navToggle.addEventListener('click', () => {
+        nav.classList.toggle('show');
+    });
+
     const updateButtonText = (newTheme) => {
         themeToggle.textContent = newTheme == DARK_THEME_CLASS ? 'Dark Mode' : 'Light Mode';
     };
@@ -89,19 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         intervalId = setInterval(changeGreeting, 2000); // Change text every 2 seconds to account for fading
     }
 
-    function stopInterval() {
-        clearInterval(intervalId);
-    }
-
-    document.getElementById('hello').addEventListener('mouseover', stopInterval);
-    document.getElementById('hello').addEventListener('mouseout', startInterval);
-
     // Start the interval when the page loads
     startInterval();
-
-    // Remove background animations from footer
-    const footer = document.querySelector('footer');
-    // const footerAnimations = footer.querySelectorAll('.background-animation');
-    // footerAnimations.forEach(anim => anim.remove());
-   
 });
