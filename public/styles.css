@@ -137,13 +137,13 @@ p {
 
 #home {
     display: flex;
-    align-items: center;
+    align-items: center top;
     justify-content: center;
     height: 100vh;
     width: 100%;
-    background-color: #f0f0f0; /* Adjust background color as needed */
+    background: var(--skill-bar-background);
     box-sizing: border-box;
-    padding: 20px; /* Optional padding for some space around the content */
+    /*padding: 20px;*/ /* Optional padding for some space around the content */
 }
 
 .home {
@@ -154,7 +154,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0; /* Adjust background color as needed */
+    background: var(--skill-bar-background);
     box-sizing: border-box;
     padding: 20px; /* Optional padding for some space around the content */
     user-select: none;
@@ -168,7 +168,7 @@ p {
 
 
 .project {
-    background: white;
+    background: var(--skill-bar-background);
     padding: 1.5em;
     margin: 1em 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
