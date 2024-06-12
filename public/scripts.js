@@ -98,4 +98,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start the interval when the page loads
     startInterval();
+
+    // projects
+    const loadProjects = async () => {
+        try {
+            // Fetch JSON data
+            const response = await fetch('Data/projects.json');
+            const projects = await response.json();
+
+            // Get the projects section
+            const projectsSection = document.getElementById('projects');
+            const projectPreviewImage = document.getElementById('project-preview-image');
+            var ul = document.createElement("ul");
+
+            // Loop through each project and create HTML elements
+            projects.forEach((project, index) => {
+
+                // Create project button
+                const button = document.createElement('button');
+                button.textContent = project.name;
+                button.classList.add('project-button');
+
+                // Add mouseenter event
+                button.addEventListener('mouseenter', () => {
+                    // Your mouseenter event handler code here
+                    console.log('Mouse entered:', project.name);
+                    projectPreviewImage.src = project.image;
+                });
+
+                // Add mouseleave event
+                button.addEventListener('mouseleave', () => {
+                    projectPreviewImage.src = '';
+                    // Your mouseleave event handler code here
+                    console.log('Mouse left:', project.name);
+                });
+
+                var li = document.createElement("li"); // Create a new <li> element
+                li.appendChild(button);
+                ul.appendChild(li);
+            });
+            // projectsSection.appendChild(ul);
+            projectsSection.insertBefore(ul, projectsSection.firstChild);
+
+        } catch (error) {
+            console.error('Error loading projects:', error);
+        }
+    };
+
+    // Call the loadProjects function when the DOM content is loaded
+    loadProjects();
+
 });
