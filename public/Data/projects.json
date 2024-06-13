@@ -1,14 +1,17 @@
 [
     {
         "name": "Just Catch Boxes",
-        "image": "Images/home_bg.jpg"
+        "image": "Images/home_bg.jpg",
+        "youtubeURL": "https://www.youtube.com/embed/tGabkt444So?si=rRH5_RPiIA3ezPDc?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0"
     },
     {
         "name": "Relieve",
-        "image": "Images/home_bg.jpg"
+        "image": "Images/home_bg.jpg",
+        "youtubeURL": "https://youtube.com/embed/wnoIDet9-wg?si=oim5X7e5Sg72iqyr?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0"
     },
     {
         "name": "Subway Traffic Racer",
-        "image": "Images/home_bg.jpg"
+        "image": "Images/home_bg.jpg",
+        "youtubeURL": "https://www.youtube.com/embed/AfTfzVBIujk?si=k-r31aCd4O-l9Byh?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0"
     }
 ]

@@ -196,48 +196,16 @@ footer {
     transition: background 0.3s, color 0.3s;
 }
 
-form {
+
+#contact {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-form label {
-    margin-top: 1em;
-    width: 100%;
-    text-align: left;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 0.8em;
-    margin-top: 0.5em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: border-color 0.3s;
-}
-
-form input:focus, form textarea:focus {
-    border-color: var(--button-background);
-}
-
-form button {
-    background: var(--button-background);
-    color: var(--button-text-color);
-    padding: 0.8em 1.5em;
-    border: none;
-    border-radius: 5px;
-    margin-top: 1em;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-form button:hover {
-    background: var(--header-text-color);
-    color: var(--header-background);
+    justify-content: center;
+    background: var(--skill-bar-background);
+    box-sizing: border-box;
+    padding: 20px; /* Optional padding for some space around the content */
+    user-select: none;
+    margin-bottom: 30px;
 }
 
 .contact-link {
@@ -246,7 +214,7 @@ form button:hover {
 }
 
 .contact-link i {
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 .contact-link:hover {
@@ -256,14 +224,24 @@ form button:hover {
 /* projects section */
 
 #projects-section {
+    background: var(--skill-bar-background);
+    box-sizing: border-box;
+    padding: 20px; /* Optional padding for some space around the content */
+    user-select: none;
+    height: 600px;
+}
+
+#projects-container{
     display: flex;
     align-items: flex-start;
     width: 100%;
     padding: 10px;
+    justify-content: center;
 }
 
 #projects{
     width: 45%;
+    padding: 20px;
 }
 
 #projects ul {
@@ -280,14 +258,23 @@ form button:hover {
 
 #project-preview {
     width: 45%;
-    text-align: right;
+    padding: 20px;
 }
 
 #project-preview img {
-    width: auto;
-    height: var();
     transition: opacity 0.5s ease;
     opacity: 0;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+#project-preview iframe {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    border-radius: 10px;
 }
 
 .project-button {
@@ -312,6 +299,18 @@ form button:hover {
 }
 
 /* Skills Section */
+
+#skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--skill-bar-background);
+    box-sizing: border-box;
+    padding: 20px; /* Optional padding for some space around the content */
+    user-select: none;
+    margin-bottom: 30px;
+}
+
 .skill-bar {
     width: 80%;
     margin: 0 auto;
@@ -407,18 +406,5 @@ form button:hover {
 
     #project-preview {
         display: none;
-    }
-}
-
-/* Background Animation */
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
     }
 }

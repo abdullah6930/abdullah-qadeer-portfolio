@@ -49,17 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     currentTheme = localStorage.getItem(THEME_MODE);
     setTheme();
 
-
-    // Create background animation elements
-    for (let i = 0; i < 20; i++) {
-        const bubble = document.createElement('div');
-        bubble.className = 'background-animation';
-        bubble.style.left = `${Math.random() * 100}vw`;
-        bubble.style.animationDelay = `${Math.random() * 5}s`;
-        bubble.style.animationDuration = `${2 + Math.random() * 3}s`;
-        document.body.appendChild(bubble);
-    }
-
     // Animate skill bars
     const skills = document.querySelectorAll('.skill');
     skills.forEach(skill => {
@@ -99,6 +88,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start the interval when the page loads
     startInterval();
 
+    function previewVideoOrImage(projectPreviewImage, projectPreviewVideo, project) {
+        projectPreviewImage.src = project.image;
+        var hasVideo = "youtubeURL" in project;
+        if(hasVideo)
+            projectPreviewVideo.src = project.youtubeURL;
+
+        projectPreviewImage.style.display = hasVideo ? "none" : "block";
+        projectPreviewImage.style.opacity = hasVideo ? 0 : 1;
+        projectPreviewVideo.style.display = hasVideo ? "block" : "none";
+        projectPreviewVideo.style.opacity = hasVideo ? 1 : 0;
+    }
+
     // projects
     const loadProjects = async () => {
         try {
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Get the projects section
             const projectsSection = document.getElementById('projects');
             const projectPreviewImage = document.getElementById('project-preview-image');
+            const projectPreviewVideo = document.getElementById('project-preview-video');
             var ul = document.createElement("ul");
 
             // Loop through each project and create HTML elements
@@ -121,15 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Add mouseenter event
                 button.addEventListener('mouseenter', () => {
-                    // Your mouseenter event handler code here
-                    projectPreviewImage.src = project.image;
-                    projectPreviewImage.style.opacity = 1;
+                    previewVideoOrImage(projectPreviewImage, projectPreviewVideo, project);
                 });
 
-                // Add mouseleave event
-                button.addEventListener('mouseleave', () => {
-                    projectPreviewImage.style.opacity = 0;
-                    // Your mouseleave event handler code here
+                button.addEventListener('click', () => {
+                    previewVideoOrImage(projectPreviewImage, projectPreviewVideo, project);
                 });
 
                 var li = document.createElement("li"); // Create a new <li> element
@@ -139,6 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // projectsSection.appendChild(ul);
             projectsSection.insertBefore(ul, projectsSection.firstChild);
 
+            document.getElementById("project-preview").style.height = projectsSection.offsetHeight + "px";
+
         } catch (error) {
             console.error('Error loading projects:', error);
         }
@@ -146,5 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Call the loadProjects function when the DOM content is loaded
     loadProjects();
+
+    document.getElementById('close-button').addEventListener('click', function() {
+        document.getElementById('maintenance-section').style.display = 'none';
+    });
+    
 
 });
