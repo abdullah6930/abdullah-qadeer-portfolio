@@ -400,11 +400,26 @@ footer {
         padding: 3em 1em;
     }
 
-    #projects{
+    #projects-section {
+        background: var(--skill-bar-background);
+        box-sizing: border-box;
+        padding: 20px; /* Optional padding for some space around the content */
+        user-select: none;
+        height: 1000px;
+    }
+
+    #projects-container{
+        display: block;
         width: 100%;
+        justify-content: center;
+    }
+
+    #projects{
+        width: 90%;
     }
 
     #project-preview {
-        display: none;
+        width: 90%;
+        padding: 20px;
     }
 }
