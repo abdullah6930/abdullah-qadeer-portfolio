@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-     // Add event listener for theme toggle button click
-     themeToggle.addEventListener('click', () => {
+    // Add event listener for theme toggle button click
+    themeToggle.addEventListener('click', () => {
         body.classList.toggle(DARK_THEME_CLASS);
         var newTheme = body.classList.contains(DARK_THEME_CLASS) ? DARK_THEME_CLASS : LIGHT_THEME_CLASS;
         updateButtonText(newTheme);
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem(THEME_MODE, currentTheme);
     });
 
-    const setTheme = () =>{
+    const setTheme = () => {
         var newTheme = currentTheme == 0 ? LIGHT_THEME_CLASS : DARK_THEME_CLASS;
         body.classList.toggle(newTheme);
         updateButtonText(newTheme);
@@ -122,15 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Add mouseenter event
                 button.addEventListener('mouseenter', () => {
                     // Your mouseenter event handler code here
-                    console.log('Mouse entered:', project.name);
                     projectPreviewImage.src = project.image;
+                    projectPreviewImage.style.opacity = 1;
                 });
 
                 // Add mouseleave event
                 button.addEventListener('mouseleave', () => {
-                    projectPreviewImage.src = '';
+                    projectPreviewImage.style.opacity = 0;
                     // Your mouseleave event handler code here
-                    console.log('Mouse left:', project.name);
                 });
 
                 var li = document.createElement("li"); // Create a new <li> element
