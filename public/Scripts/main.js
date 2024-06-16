@@ -1,5 +1,3 @@
-// scripts.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
@@ -102,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to load projects
     const loadProjects = async () => {
-        const response = await fetch('Data/projects.json');
+        const response = await fetch(`Data/projects.json`);
         const projects = await response.json();
 
         projects.forEach(section => {
