@@ -100,28 +100,45 @@ document.addEventListener('DOMContentLoaded', () => {
         projectPreviewVideo.style.opacity = hasVideo ? 1 : 0;
     }
 
-    // projects
+    // Function to load projects
     const loadProjects = async () => {
-        try {
-            // Fetch JSON data
-            const response = await fetch('Data/projects.json');
-            const projects = await response.json();
+        const response = await fetch('Data/projects.json');
+        const projects = await response.json();
 
-            // Get the projects section
-            const projectsSection = document.getElementById('projects');
-            const projectPreviewImage = document.getElementById('project-preview-image');
-            const projectPreviewVideo = document.getElementById('project-preview-video');
-            var ul = document.createElement("ul");
+        projects.forEach(section => {
+            const sectionElement = document.createElement('section');
+            sectionElement.id = 'projects-section';
 
-            // Loop through each project and create HTML elements
-            projects.forEach((project, index) => {
+            const sectionTitle = document.createElement('h2');
+            sectionTitle.textContent = section.section;
+            sectionElement.appendChild(sectionTitle);
 
-                // Create project button
+            const projectsContainer = document.createElement('div');
+            projectsContainer.id = 'projects-container';
+
+            const projectsList = document.createElement('div');
+            projectsList.id = 'projects';
+
+            const projectPreview = document.createElement('div');
+            projectPreview.id = 'project-preview';
+
+            const projectPreviewImage = document.createElement('img');
+            projectPreviewImage.id = 'project-preview-image';
+            projectPreview.appendChild(projectPreviewImage);
+
+            const projectPreviewVideo = document.createElement('iframe');
+            projectPreviewVideo.id = 'project-preview-video';
+            projectPreviewVideo.title = 'YouTube video player';
+            projectPreviewVideo.allow = 'autoplay; encrypted-media';
+            projectPreview.appendChild(projectPreviewVideo);
+
+            const ul = document.createElement('ul');
+
+            section.projects.forEach(project => {
                 const button = document.createElement('button');
                 button.textContent = project.name;
                 button.classList.add('project-button');
 
-                // Add mouseenter event
                 button.addEventListener('mouseenter', () => {
                     previewVideoOrImage(projectPreviewImage, projectPreviewVideo, project);
                 });
@@ -130,26 +147,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     previewVideoOrImage(projectPreviewImage, projectPreviewVideo, project);
                 });
 
-                var li = document.createElement("li"); // Create a new <li> element
+                const li = document.createElement('li');
                 li.appendChild(button);
                 ul.appendChild(li);
             });
-            // projectsSection.appendChild(ul);
-            projectsSection.insertBefore(ul, projectsSection.firstChild);
 
-            document.getElementById("project-preview").style.height = projectsSection.offsetHeight + "px";
-
-        } catch (error) {
-            console.error('Error loading projects:', error);
-        }
+            projectsList.appendChild(ul);
+            projectsContainer.appendChild(projectsList);
+            projectsContainer.appendChild(projectPreview);
+            sectionElement.appendChild(projectsContainer);
+            var skillsElement = document.getElementById('skills');
+            skillsElement.parentNode.insertBefore(sectionElement, skillsElement);
+            document.getElementById("project-preview").style.height = projectsList.offsetHeight + "px";
+        });
     };
 
-    // Call the loadProjects function when the DOM content is loaded
     loadProjects();
-
-    document.getElementById('close-button').addEventListener('click', function() {
-        document.getElementById('maintenance-section').style.display = 'none';
-    });
-    
-
 });
