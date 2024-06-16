@@ -228,7 +228,6 @@ footer {
     box-sizing: border-box;
     padding: 20px; /* Optional padding for some space around the content */
     user-select: none;
-    height: 600px;
 }
 
 #projects-container{
@@ -290,12 +289,13 @@ footer {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    border-radius: 10px;
 }
 
 .project-button:hover {
     background: var(--header-text-color);
     color: var(--header-background);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 /* Skills Section */
@@ -405,7 +405,6 @@ footer {
         box-sizing: border-box;
         padding: 20px; /* Optional padding for some space around the content */
         user-select: none;
-        height: 1000px;
     }
 
     #projects-container{

@@ -106,36 +106,37 @@ document.addEventListener('DOMContentLoaded', () => {
         const projects = await response.json();
 
         projects.forEach(section => {
-            const sectionElement = document.createElement('section');
+            var sectionElement = document.createElement('section');
             sectionElement.id = 'projects-section';
 
-            const sectionTitle = document.createElement('h2');
+            var sectionTitle = document.createElement('h2');
             sectionTitle.textContent = section.section;
             sectionElement.appendChild(sectionTitle);
 
-            const projectsContainer = document.createElement('div');
+            var projectsContainer = document.createElement('div');
             projectsContainer.id = 'projects-container';
 
-            const projectsList = document.createElement('div');
+            var projectsList = document.createElement('div');
             projectsList.id = 'projects';
 
-            const projectPreview = document.createElement('div');
+            var projectPreview = document.createElement('div');
             projectPreview.id = 'project-preview';
 
-            const projectPreviewImage = document.createElement('img');
+            var projectPreviewImage = document.createElement('img');
             projectPreviewImage.id = 'project-preview-image';
             projectPreview.appendChild(projectPreviewImage);
 
-            const projectPreviewVideo = document.createElement('iframe');
+            var projectPreviewVideo = document.createElement('iframe');
             projectPreviewVideo.id = 'project-preview-video';
             projectPreviewVideo.title = 'YouTube video player';
-            projectPreviewVideo.allow = 'autoplay; encrypted-media';
+            projectPreviewVideo.allow = 'autoplay; encrypted-media;';
+            projectPreviewVideo.setAttribute('allowfullscreen', '');
             projectPreview.appendChild(projectPreviewVideo);
 
-            const ul = document.createElement('ul');
+            var ul = document.createElement('ul');
 
             section.projects.forEach(project => {
-                const button = document.createElement('button');
+                var button = document.createElement('button');
                 button.textContent = project.name;
                 button.classList.add('project-button');
 
@@ -158,7 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
             sectionElement.appendChild(projectsContainer);
             var skillsElement = document.getElementById('skills');
             skillsElement.parentNode.insertBefore(sectionElement, skillsElement);
-            document.getElementById("project-preview").style.height = projectsList.offsetHeight + "px";
+            projectPreview.style.height = projectPreview.offsetWidth + "px";
+            
         });
     };
 
