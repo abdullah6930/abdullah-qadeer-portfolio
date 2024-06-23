@@ -138,12 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.textContent = project.name;
                 button.classList.add('project-button');
 
-                button.addEventListener('mouseenter', () => {
-                    previewVideoOrImage(projectPreviewImage, projectPreviewVideo, project);
-                });
-
                 button.addEventListener('click', (e) => {
-                    toggleProjectDescription(e, project, projectsContainer);
+                    toggleProjectDescription(e, project, projectsContainer, projectPreviewImage, projectPreviewVideo);
                 });
 
                 const li = document.createElement('li');
@@ -166,7 +162,10 @@ document.addEventListener('DOMContentLoaded', () => {
     var lastOpenedProjectButton = null;
     var lastOpenedProjectButtonText = '';
 
-    function toggleProjectDescription(event, project, projectsContainer) {
+    function toggleProjectDescription(event, project, projectsContainer, projectPreviewImage, projectPreviewVideo) {
+
+        previewVideoOrImage(projectPreviewImage, projectPreviewVideo, project);
+
         const button = event.target;
         const existingDescriptionContainer = projectsContainer.querySelector('.description-container');
 
