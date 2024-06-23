@@ -256,7 +256,7 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for emphasis */
 }
 
-.description-container h3 {
+.description-container h2 {
     text-align: center;
     color: var(--description-text-color);
 }
@@ -431,6 +431,8 @@ footer {
 .skill[data-percentage="75"]::after { width: 75%; }
 .skill[data-percentage="70"]::after { width: 70%; }
 .skill[data-percentage="95"]::after { width: 95%; }
+.skill[data-percentage="50"]::after { width: 50%; }
+.skill[data-percentage="50"]::after { width: 50%; }
 
 /* Responsive Design */
 @media (max-width: 768px) {

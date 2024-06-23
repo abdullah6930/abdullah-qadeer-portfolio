@@ -5,17 +5,17 @@
             {
                 "name": "Just Catch Boxes",
                 "youtubeURL": "https://www.youtube.com/embed/tGabkt444So?si=rRH5_RPiIA3ezPDc?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
-                "descriptionHTML": "<h3>Just Catch Boxes</h3><p>This is the description of Project 1.</p><p>Technologies Used: <i class=\"fa-brands fa-unity\"></i>, C#</p><button onclick=\"window.open('https://play.google.com/store/apps/details?id=com.BoxesLabs.JustCatchBoxes', '_blank');\" type=\"button\" class=\"googleplay-link-button\"><img alt='Get it on Google Play' src='Images/getfromplaystore.png'/></i></button>"
+                "descriptionHTML": "Data/Projects/justCatchBoxes.html"
             },
             {
                 "name": "Relieve",
                 "youtubeURL": "https://youtube.com/embed/wnoIDet9-wg?si=oim5X7e5Sg72iqyr?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
-                "descriptionHTML": "<h3>Project 1</h3><p>This is the description of Project 1.</p><p>Technologies Used: HTML, CSS, JavaScript</p><button href=\"https://example.com/project1-demo\" target=\"_blank\" class=\"project-link-button\">View Demo</button>"
+                "descriptionHTML": "Data/Projects/relieve.html"
             },
             {
                 "name": "Subway Traffic Racer",
                 "youtubeURL": "https://www.youtube.com/embed/AfTfzVBIujk?si=k-r31aCd4O-l9Byh?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
-                "descriptionHTML": "<h3>Project 1</h3><p>This is the description of Project 1.</p><p>Technologies Used: HTML, CSS, JavaScript</p><button href=\"https://example.com/project1-demo\" target=\"_blank\" class=\"project-link-button\">View Demo</button>"
+                "descriptionHTML": "Data/Projects/subwayTrafficRacer.html"
             }
         ]
     },
@@ -25,12 +25,12 @@
             {
                 "name": "Mesh Generator",
                 "youtubeURL": "https://www.youtube.com/embed/PzhMkh2wJgA?si=rLiG-MQ-vzH01_Gs?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
-                "descriptionHTML": "<h3>Project 1</h3><p>This is the description of Project 1.</p><p>Technologies Used: HTML, CSS, JavaScript</p><button href=\"https://example.com/project1-demo\" target=\"_blank\" class=\"project-link-button\">View Demo</button>"
+                "descriptionHTML": "Data/Projects/meshGenerator.html"
             },
             {
                 "name": "ChatGPT Wrapper",
                 "youtubeURL": "https://www.youtube.com/embed/Pt9sJFzE8qA?si=u94SxkFBVFL0KSlJ?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
-                "descriptionHTML": "<h3>Project 1</h3><p>This is the description of Project 1.</p><p>Technologies Used: HTML, CSS, JavaScript</p><button href=\"https://example.com/project1-demo\" target=\"_blank\" class=\"project-link-button\">View Demo</button>"
+                "descriptionHTML": "Data/Projects/chatGPTWrapper.html"
             }
         ]
     }

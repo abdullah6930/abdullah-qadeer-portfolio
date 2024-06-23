@@ -168,43 +168,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function toggleProjectDescription(event, project, projectsContainer) {
         const button = event.target;
-        const descriptionContainer = document.createElement('div');
-        descriptionContainer.classList.add('description-container');
-        descriptionContainer.style.display = 'none';
-        descriptionContainer.innerHTML = project.descriptionHTML;
-    
         const existingDescriptionContainer = projectsContainer.querySelector('.description-container');
-    
+
         if (button.classList.contains('close-button')) {
+            // Close the description
             button.classList.remove('close-button');
             button.textContent = lastOpenedProjectButtonText;
+
             if (existingDescriptionContainer) {
                 $(existingDescriptionContainer).slideUp(function () {
                     existingDescriptionContainer.remove();
                 });
             }
         } else {
+            // Open the description
             if (lastOpenedProjectButton) {
                 lastOpenedProjectButton.textContent = lastOpenedProjectButtonText;
                 lastOpenedProjectButton.classList.remove('close-button');
             }
-    
+
             lastOpenedProjectButton = button;
-            lastOpenedProjectButtonText = project.name;
+            lastOpenedProjectButtonText = button.textContent;
             button.textContent = 'Close';
             button.classList.add('close-button');
-    
-            if (existingDescriptionContainer) {
-                $(existingDescriptionContainer).slideUp(function () {
-                    existingDescriptionContainer.remove();
-                    // Insert the description container after the clicked button
-                    button.insertAdjacentElement('afterend', descriptionContainer);
-                    $(descriptionContainer).slideDown();
+
+            // Create a new description container
+            const descriptionContainer = document.createElement('div');
+            descriptionContainer.classList.add('description-container');
+            descriptionContainer.style.display = 'none';
+
+            // Load description from the HTML file
+            fetch(project.descriptionHTML)
+                .then(response => response.text())
+                .then(html => {
+                    descriptionContainer.innerHTML = html;
+
+                    // Remove existing description container if present
+                    if (existingDescriptionContainer) {
+                        $(existingDescriptionContainer).slideUp(function () {
+                            existingDescriptionContainer.remove();
+                            // Insert the description container after the clicked button
+                            button.insertAdjacentElement('afterend', descriptionContainer);
+                            $(descriptionContainer).slideDown();
+                        });
+                    } else {
+                        button.insertAdjacentElement('afterend', descriptionContainer);
+                        $(descriptionContainer).slideDown();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching description:', error);
                 });
-            } else {
-                button.insertAdjacentElement('afterend', descriptionContainer);
-                $(descriptionContainer).slideDown();
-            }
         }
     }
+
 });
