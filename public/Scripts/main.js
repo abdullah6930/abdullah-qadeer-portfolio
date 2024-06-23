@@ -142,8 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     previewVideoOrImage(projectPreviewImage, projectPreviewVideo, project);
                 });
 
-                button.addEventListener('click', () => {
-                    previewVideoOrImage(projectPreviewImage, projectPreviewVideo, project);
+                button.addEventListener('click', (e) => {
+                    toggleProjectDescription(e, project, projectsContainer);
                 });
 
                 const li = document.createElement('li');
@@ -158,9 +158,53 @@ document.addEventListener('DOMContentLoaded', () => {
             var skillsElement = document.getElementById('skills');
             skillsElement.parentNode.insertBefore(sectionElement, skillsElement);
             projectPreview.style.height = projectPreview.offsetWidth + "px";
-            
+
         });
     };
 
     loadProjects();
+    var lastOpenedProjectButton = null;
+    var lastOpenedProjectButtonText = '';
+
+    function toggleProjectDescription(event, project, projectsContainer) {
+        const button = event.target;
+        const descriptionContainer = document.createElement('div');
+        descriptionContainer.classList.add('description-container');
+        descriptionContainer.style.display = 'none';
+        descriptionContainer.innerHTML = project.descriptionHTML;
+    
+        const existingDescriptionContainer = projectsContainer.querySelector('.description-container');
+    
+        if (button.classList.contains('close-button')) {
+            button.classList.remove('close-button');
+            button.textContent = lastOpenedProjectButtonText;
+            if (existingDescriptionContainer) {
+                $(existingDescriptionContainer).slideUp(function () {
+                    existingDescriptionContainer.remove();
+                });
+            }
+        } else {
+            if (lastOpenedProjectButton) {
+                lastOpenedProjectButton.textContent = lastOpenedProjectButtonText;
+                lastOpenedProjectButton.classList.remove('close-button');
+            }
+    
+            lastOpenedProjectButton = button;
+            lastOpenedProjectButtonText = project.name;
+            button.textContent = 'Close';
+            button.classList.add('close-button');
+    
+            if (existingDescriptionContainer) {
+                $(existingDescriptionContainer).slideUp(function () {
+                    existingDescriptionContainer.remove();
+                    // Insert the description container after the clicked button
+                    button.insertAdjacentElement('afterend', descriptionContainer);
+                    $(descriptionContainer).slideDown();
+                });
+            } else {
+                button.insertAdjacentElement('afterend', descriptionContainer);
+                $(descriptionContainer).slideDown();
+            }
+        }
+    }
 });

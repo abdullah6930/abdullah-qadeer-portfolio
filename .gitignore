@@ -32,3 +32,4 @@ yarn.lock
 # Ignore any backups or swap files
 *~
 *.swp
+.firebase/hosting.cHVibGlj.cache
