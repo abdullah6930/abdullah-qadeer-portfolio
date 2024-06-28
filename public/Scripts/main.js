@@ -100,61 +100,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to load projects
     const loadProjects = async () => {
-        const response = await fetch(`Data/projects.json`);
-        const projects = await response.json();
+        const response = await fetch(`Data/Data.json`);
+        const sections = await response.json();
 
-        projects.forEach(section => {
+        sections.forEach(section => {
             var sectionElement = document.createElement('section');
             sectionElement.id = 'projects-section';
 
-            var sectionTitle = document.createElement('h2');
-            sectionTitle.textContent = section.section;
-            sectionElement.appendChild(sectionTitle);
+            // Load description from the HTML file
+            fetch(section.sectionDescriptionHTML)
+                .then(response => response.text())
+                .then(html => {
+                    var sectionDescription = document.createElement('div');
+                    sectionDescription.innerHTML = html;
+                    sectionElement.appendChild(sectionDescription);
 
-            var projectsContainer = document.createElement('div');
-            projectsContainer.id = 'projects-container';
-
-            var projectsList = document.createElement('div');
-            projectsList.id = 'projects';
-
-            var projectPreview = document.createElement('div');
-            projectPreview.id = 'project-preview';
-
-            var projectPreviewImage = document.createElement('img');
-            projectPreviewImage.id = 'project-preview-image';
-            projectPreview.appendChild(projectPreviewImage);
-
-            var projectPreviewVideo = document.createElement('iframe');
-            projectPreviewVideo.id = 'project-preview-video';
-            projectPreviewVideo.title = 'YouTube video player';
-            projectPreviewVideo.allow = 'autoplay; encrypted-media;';
-            projectPreviewVideo.setAttribute('allowfullscreen', '');
-            projectPreview.appendChild(projectPreviewVideo);
-
-            var ul = document.createElement('ul');
-
-            section.projects.forEach(project => {
-                var button = document.createElement('button');
-                button.textContent = project.name;
-                button.classList.add('project-button');
-
-                button.addEventListener('click', (e) => {
-                    toggleProjectDescription(e, project, projectsContainer, projectPreviewImage, projectPreviewVideo);
+                    LoadSectionData(section, sectionElement);
+                })
+                .catch(() => {
+                    LoadSectionData(section, sectionElement);
                 });
-
-                const li = document.createElement('li');
-                li.appendChild(button);
-                ul.appendChild(li);
-            });
-
-            projectsList.appendChild(ul);
-            projectsContainer.appendChild(projectsList);
-            projectsContainer.appendChild(projectPreview);
-            sectionElement.appendChild(projectsContainer);
-            var skillsElement = document.getElementById('skills');
-            skillsElement.parentNode.insertBefore(sectionElement, skillsElement);
-            projectPreview.style.height = projectPreview.offsetWidth + "px";
-
         });
     };
 
@@ -221,4 +186,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function LoadSectionData(section, sectionElement) {
+        var projectsContainer = document.createElement('div');
+        projectsContainer.id = 'projects-container';
+    
+        var projectsList = document.createElement('div');
+        projectsList.id = 'projects';
+    
+        var projectPreview = document.createElement('div');
+        projectPreview.id = 'project-preview';
+    
+        var projectPreviewImage = document.createElement('img');
+        projectPreviewImage.id = 'project-preview-image';
+        projectPreview.appendChild(projectPreviewImage);
+    
+        var projectPreviewVideo = document.createElement('iframe');
+        projectPreviewVideo.id = 'project-preview-video';
+        projectPreviewVideo.title = 'YouTube video player';
+        projectPreviewVideo.allow = 'autoplay; encrypted-media;';
+        projectPreviewVideo.setAttribute('allowfullscreen', '');
+        projectPreview.appendChild(projectPreviewVideo);
+    
+        var ul = document.createElement('ul');
+    
+        section.projects.forEach(project => {
+            var button = document.createElement('button');
+            button.textContent = project.name;
+            button.classList.add('project-button');
+    
+            button.addEventListener('click', (e) => {
+                toggleProjectDescription(e, project, projectsContainer, projectPreviewImage, projectPreviewVideo);
+            });
+    
+            const li = document.createElement('li');
+            li.appendChild(button);
+            ul.appendChild(li);
+        });
+    
+        projectsList.appendChild(ul);
+        projectsContainer.appendChild(projectsList);
+        projectsContainer.appendChild(projectPreview);
+        sectionElement.appendChild(projectsContainer);
+        var skillsElement = document.getElementById('skills');
+        skillsElement.parentNode.insertBefore(sectionElement, skillsElement);
+        projectPreview.style.height = projectPreview.offsetWidth + "px";
+    }
 });

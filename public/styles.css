@@ -292,11 +292,57 @@ footer {
 }
 
 #project-preview iframe {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     transition: opacity 0.5s ease;
     opacity: 0;
     border-radius: 10px;
+}
+
+.section-description-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--section-background);
+    box-sizing: border-box;
+    padding: 20px;
+    user-select: none;
+    margin-bottom: 30px;
+    gap: 20px; /* Space between buttons */
+}
+
+.section-description-buttons button {
+    background: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    font-size: 1em;
+    width: 200px; /* Adjust width to fit content */
+    height: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 10px;
+    display: flex; /* Flex container for button content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    padding: 0 20px; /* Add padding for horizontal spacing inside buttons */
+}
+
+.section-description-buttons button:hover {
+    background: var(--header-text-color);
+    color: var(--header-background);
+    border-radius: 10px;
+}
+
+.section-description-buttons img{
+    max-height: 100%; /* Ensure the image and icon scale properly */
+    vertical-align: middle; /* Align vertically */
+}
+
+.section-description-buttons i {
+    font-size: 1.5em;
 }
 
 .project-button {
