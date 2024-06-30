@@ -10,7 +10,7 @@ body {
     transition: background 0.3s, color 0.3s;
     position: relative; /* Allow for absolute positioning of footer */
     padding-bottom: 60px; /* Make space for the footer */
-}
+}1
 
 :root {
     --background-color: #f4f4f9;
@@ -452,8 +452,7 @@ footer {
     height: 2em;
 }
 
-.skill::before {
-    content: attr(data-skill);
+.skill .skill-name {
     position: absolute;
     left: 1em;
     top: 50%;
@@ -461,23 +460,13 @@ footer {
     color: var(--text-color);
 }
 
-.skill::after {
-    content: '';
+.skill .skill-percentage {
     display: block;
     height: 100%;
     background: var(--section-color);
     width: 0;
     transition: width 1s;
 }
-
-.skill[data-percentage="90"]::after { width: 90%; }
-.skill[data-percentage="85"]::after { width: 85%; }
-.skill[data-percentage="80"]::after { width: 80%; }
-.skill[data-percentage="75"]::after { width: 75%; }
-.skill[data-percentage="70"]::after { width: 70%; }
-.skill[data-percentage="95"]::after { width: 95%; }
-.skill[data-percentage="50"]::after { width: 50%; }
-.skill[data-percentage="50"]::after { width: 50%; }
 
 /* Responsive Design */
 @media (max-width: 768px) {

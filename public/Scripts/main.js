@@ -113,7 +113,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     };
 
-    loadProjects();
     var lastOpenedProjectButton = null;
     var lastOpenedProjectButtonText = '';
 
@@ -221,4 +220,31 @@ document.addEventListener('DOMContentLoaded', async () => {
         skillsElement.parentNode.insertBefore(sectionElement, skillsElement);
         projectPreview.style.height = projectPreview.offsetWidth + "px";
     }
+
+    function loadSkills() {
+        const skillBarContainer = document.getElementById('skill-bar');
+
+        data.skills.forEach(skill => {
+            const skillDiv = document.createElement('div');
+            skillDiv.className = 'skill';
+            skillDiv.setAttribute('data-skill', skill.skill);
+            skillDiv.setAttribute('data-percentage', skill.percentage);
+
+            const skillName = document.createElement('div');
+            skillName.className = 'skill-name';
+            skillName.innerText = skill.skill;
+
+            const skillPercentage = document.createElement('div');
+            skillPercentage.className = 'skill-percentage';
+            skillPercentage.style.width = `${skill.percentage}%`;
+
+            skillDiv.appendChild(skillName);
+            skillDiv.appendChild(skillPercentage);
+
+            skillBarContainer.appendChild(skillDiv);
+        });
+    }
+
+    loadProjects();
+    loadSkills();
 });
