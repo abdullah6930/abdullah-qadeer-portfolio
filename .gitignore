@@ -33,3 +33,5 @@ yarn.lock
 *~
 *.swp
 .firebase/hosting.cHVibGlj.cache
+.firebaserc
+firebase.json
