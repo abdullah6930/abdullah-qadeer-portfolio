@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     const THEME_MODE = "themeMode";
@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('nav');
+
+    const response = await fetch(`Data/Data.json`);
+    const data = await response.json();
 
     navToggle.addEventListener('click', () => {
         nav.classList.toggle('show');
@@ -54,17 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         skill.style.setProperty('--width', `${percentage}%`);
     });
 
-    const greetings = [
-        { language: "English", text: "Hello" },
-        { language: "Urdu", text: "ہیلو" },
-        { language: "Arabic", text: "مرحبا" },
-        { language: "German", text: "Hallo" },
-        { language: "Spanish", text: "Hola" },
-        { language: "French", text: "Bonjour" },
-        { language: "Hindi", text: "नमस्ते" },
-        { language: "Chinese", text: "你好" },
-        { language: "Korean", text: "안녕하세요" }
-    ];
+    const greetings = data.greetings;
 
     let currentIndex = 0;
     let intervalId;
@@ -100,10 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to load projects
     const loadProjects = async () => {
-        const response = await fetch(`Data/Data.json`);
-        const sections = await response.json();
-
-        sections.forEach(section => {
+        data.sections.forEach(section => {
             var sectionElement = document.createElement('section');
             sectionElement.id = 'projects-section';
 
