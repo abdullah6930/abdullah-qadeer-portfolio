@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('nav');
 
-    const response = await fetch(`Data/Data.json`);
+    const response = await fetch(`Data/Data.json?v=2`);
     const data = await response.json();
 
     navToggle.addEventListener('click', () => {

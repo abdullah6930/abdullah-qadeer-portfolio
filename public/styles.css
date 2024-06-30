@@ -10,7 +10,7 @@ body {
     transition: background 0.3s, color 0.3s;
     position: relative; /* Allow for absolute positioning of footer */
     padding-bottom: 60px; /* Make space for the footer */
-}1
+}
 
 :root {
     --background-color: #f4f4f9;
