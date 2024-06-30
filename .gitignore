@@ -35,3 +35,5 @@ yarn.lock
 .firebase/hosting.cHVibGlj.cache
 .firebaserc
 firebase.json
+.github/workflows/firebase-hosting-merge.yml
+.github/workflows/firebase-hosting-pull-request.yml
