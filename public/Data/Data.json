@@ -1,22 +1,43 @@
 {
+    "CV": {
+        "downloadFileName": "Abdullah Qadeer - Unity Developer",
+        "cvPath": "Data/CV/Abdullah Qadeer - Unity Developer.pdf"
+    },
+    
     "sections": [
+        {
+            "section": "Arthur Technologies",
+            "sectionDescriptionHTML": "Data/ArthurTechnologies/Description.html",
+            "projects": [
+                {
+                    "name": "AI Assistant",
+                    "descriptionHTML": "Data/ArthurTechnologies/Projects/AIAssistant.html",
+                    "image" : "https://cdn.prod.website-files.com/61607251f574d28b689fd352/65687d3112ae4d085cfdf534_Arthur%20x%20Mazars%20_%20AI%20Assistant.jpg"
+                },
+                {
+                    "name": "Seated Hotspots",
+                    "videoURL": "https://player.vimeo.com/video/844525291?h=650e9777da",
+                    "descriptionHTML": "Data/ArthurTechnologies/Projects/SeatHotspots.html"
+                }
+            ]
+        },
         {
             "section": "Boxes Labs",
             "sectionDescriptionHTML": "Data/BoxesLabs/Description.html",
             "projects": [
                 {
                     "name": "Just Catch Boxes",
-                    "youtubeURL": "https://www.youtube.com/embed/tGabkt444So?si=rRH5_RPiIA3ezPDc?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
+                    "videoURL": "https://www.youtube.com/embed/tGabkt444So?si=rRH5_RPiIA3ezPDc?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
                     "descriptionHTML": "Data/BoxesLabs/Projects/justCatchBoxes.html"
                 },
                 {
                     "name": "Relieve",
-                    "youtubeURL": "https://youtube.com/embed/wnoIDet9-wg?si=oim5X7e5Sg72iqyr?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
+                    "videoURL": "https://youtube.com/embed/wnoIDet9-wg?si=oim5X7e5Sg72iqyr?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
                     "descriptionHTML": "Data/BoxesLabs/Projects/relieve.html"
                 },
                 {
                     "name": "Subway Traffic Racer",
-                    "youtubeURL": "https://www.youtube.com/embed/AfTfzVBIujk?si=k-r31aCd4O-l9Byh?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
+                    "videoURL": "https://www.youtube.com/embed/AfTfzVBIujk?si=k-r31aCd4O-l9Byh?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
                     "descriptionHTML": "Data/BoxesLabs/Projects/subwayTrafficRacer.html"
                 }
             ]
@@ -27,12 +48,12 @@
             "projects": [
                 {
                     "name": "Mesh Generator",
-                    "youtubeURL": "https://www.youtube.com/embed/PzhMkh2wJgA?si=rLiG-MQ-vzH01_Gs?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
+                    "videoURL": "https://www.youtube.com/embed/PzhMkh2wJgA?si=rLiG-MQ-vzH01_Gs?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
                     "descriptionHTML": "Data/OpenSource/Projects/meshGenerator.html"
                 },
                 {
                     "name": "ChatGPT Wrapper",
-                    "youtubeURL": "https://www.youtube.com/embed/Pt9sJFzE8qA?si=u94SxkFBVFL0KSlJ?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
+                    "videoURL": "https://www.youtube.com/embed/Pt9sJFzE8qA?si=u94SxkFBVFL0KSlJ?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0",
                     "descriptionHTML": "Data/OpenSource/Projects/chatGPTWrapper.html"
                 }
             ]

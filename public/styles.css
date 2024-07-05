@@ -20,6 +20,7 @@ body {
     --footer-background: #4a90e2;
     --footer-text-color: white;
     --button-background: #4a90e2;
+    --button-background-nav: #4782c7;
     --button-text-color: white;
     --section-background: #ddd;
     --section-color: #4a90e2;
@@ -37,6 +38,7 @@ body.dark-theme {
     --footer-background: #1a1a1a;
     --footer-text-color: #ccc;
     --button-background: #333;
+    --button-background-nav: #333;
     --button-text-color: #ccc;
     --section-background: #555;
     --section-color: #1a1a1a;
@@ -113,17 +115,18 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-#theme-toggle {
-    background: var(--button-background);
+nav ul li button {
+    background: var(--button-background-nav);
     color: var(--button-text-color);
     border: none;
     padding: 0.5em 1em;
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
     font-size: 1em;
+    border-radius: 5px;
 }
 
-#theme-toggle:hover {
+nav ul li button:hover {
     background: var(--header-text-color);
     color: var(--header-background);
     border-radius: 5px;
@@ -281,13 +284,17 @@ footer {
 #project-preview {
     width: 45%;
     padding: 20px;
+    display: flex;           /* Enable flexbox */
+    align-items: center;    /* Vertically center items */
+    justify-content: center; /* Horizontally center items (optional) */
 }
 
 #project-preview img {
     transition: opacity 0.5s ease;
     opacity: 0;
-    width: 90%;
-    height: 90%;
+    width: 100%; 
+    height: auto;
+    object-fit: cover;  /* Fill the space, maintaining aspect ratio */
     border-radius: 10px;
 }
 
@@ -341,6 +348,12 @@ footer {
     vertical-align: middle; /* Align vertically */
 }
 
+.section-description-buttons button:hover img[src$=".svg"] { 
+    max-height: 100%; /* Ensure the image and icon scale properly */
+    vertical-align: middle; /* Align vertically */
+    filter: invert(100%); 
+}
+
 .section-description-buttons i {
     font-size: 1.5em;
 }
@@ -390,6 +403,10 @@ footer {
     background: var(--header-text-color);
     color: var(--header-background);
     transform: scale(1.05);
+}
+
+.project-link-button:hover img[src$=".svg"] { 
+    filter: invert(100%); 
 }
 
 .googleplay-link-button {

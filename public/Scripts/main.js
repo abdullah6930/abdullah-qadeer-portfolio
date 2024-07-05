@@ -81,9 +81,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function previewVideoOrImage(projectPreviewImage, projectPreviewVideo, project) {
         projectPreviewImage.src = project.image;
-        var hasVideo = "youtubeURL" in project;
+        var hasVideo = "videoURL" in project;
         if(hasVideo)
-            projectPreviewVideo.src = project.youtubeURL;
+            projectPreviewVideo.src = project.videoURL;
 
         projectPreviewImage.style.display = hasVideo ? "none" : "block";
         projectPreviewImage.style.opacity = hasVideo ? 0 : 1;
@@ -247,4 +247,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     loadProjects();
     loadSkills();
+
+    document.getElementById('downloadCV').addEventListener('click', function () {
+        const link = document.createElement('a');
+        link.href = data.CV.cvPath; 
+        link.download = data.CV.downloadFileName;  // Set the desired filename (optional)
+
+        // Append to the body and click it
+        document.body.appendChild(link);
+        link.click();
+
+        // Clean up (remove the link)
+        document.body.removeChild(link);
+    });
 });
