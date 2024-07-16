@@ -124,12 +124,20 @@ nav ul li button {
     transition: background 0.3s, color 0.3s;
     font-size: 1em;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
 }
 
 nav ul li button:hover {
     background: var(--header-text-color);
     color: var(--header-background);
     border-radius: 5px;
+}
+
+#theme-icon {
+    transition: transform 0.5s;
+    display: inline-block;
 }
 
 section {

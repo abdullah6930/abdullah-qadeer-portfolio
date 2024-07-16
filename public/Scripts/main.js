@@ -6,21 +6,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     const LIGHT_THEME_CLASS = 'light-theme';
     currentTheme = 0;
 
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('nav');
-
-    const response = await fetch(`Data/Data.json?v=2`);
+    const response = await fetch(`Data/Data.json?v=3`);
     const data = await response.json();
 
-    navToggle.addEventListener('click', () => {
-        nav.classList.toggle('show');
-    });
-
-    const updateButtonText = (newTheme) => {
-        themeToggle.textContent = newTheme == DARK_THEME_CLASS ? 'Dark Mode' : 'Light Mode';
+    const updateThemeButtonTextAndIcon = (newTheme) => {
+        const iconClass = newTheme === DARK_THEME_CLASS ? 'fa-moon' : 'fa-sun';
+        themeToggle.innerHTML = (newTheme === DARK_THEME_CLASS ? 'Dark Mode' : 'Light Mode') + ` <i class="fa-solid ${iconClass}" id="theme-icon"></i>`;
     };
 
-    // Function to update icon colors based on theme mode
+    const updateThemeButtonIconOnly = (newTheme) => {
+        const iconClass = newTheme === DARK_THEME_CLASS ? 'fa-moon' : 'fa-sun';
+        themeToggle.innerHTML = (newTheme === DARK_THEME_CLASS ? 'Dark Mode' : 'Light Mode') + ` <i class="fa-solid ${iconClass}" id="theme-icon"></i>`;
+    };
+
     const updateIconColors = (newTheme) => {
         const isDarkMode = newTheme == DARK_THEME_CLASS;
         const iconColor = isDarkMode ? '' : '#4a90e2';
@@ -32,18 +30,32 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Add event listener for theme toggle button click
     themeToggle.addEventListener('click', () => {
-        body.classList.toggle(DARK_THEME_CLASS);
-        var newTheme = body.classList.contains(DARK_THEME_CLASS) ? DARK_THEME_CLASS : LIGHT_THEME_CLASS;
-        updateButtonText(newTheme);
-        updateIconColors(newTheme); // Update icon colors when theme mode changes
-        currentTheme = newTheme == DARK_THEME_CLASS ? 1 : 0;
+        const currentThemeClass = document.body.classList.contains(DARK_THEME_CLASS) ? DARK_THEME_CLASS : LIGHT_THEME_CLASS;
+        const newThemeClass = currentThemeClass === DARK_THEME_CLASS ? LIGHT_THEME_CLASS : DARK_THEME_CLASS;
+
+        document.body.classList.remove(currentThemeClass);
+        document.body.classList.add(newThemeClass);
+
+        updateThemeButtonTextAndIcon(newThemeClass);
+        updateIconColors(newThemeClass); // Update icon colors when theme mode changes
+        currentTheme = newThemeClass == DARK_THEME_CLASS ? 1 : 0;
         localStorage.setItem(THEME_MODE, currentTheme);
+    });
+
+    themeToggle.addEventListener('mouseenter', () => {
+        var newThemeClass = currentTheme == 0 ? DARK_THEME_CLASS : LIGHT_THEME_CLASS;
+        updateThemeButtonIconOnly(newThemeClass);
+    });
+
+    themeToggle.addEventListener('mouseleave', () => {
+        var newThemeClass = currentTheme == 0 ? LIGHT_THEME_CLASS : DARK_THEME_CLASS;
+        updateThemeButtonIconOnly(newThemeClass);
     });
 
     const setTheme = () => {
         var newTheme = currentTheme == 0 ? LIGHT_THEME_CLASS : DARK_THEME_CLASS;
         body.classList.toggle(newTheme);
-        updateButtonText(newTheme);
+        updateThemeButtonTextAndIcon(newTheme);
         updateIconColors(newTheme); // Update icon colors when theme mode changes
     };
 
@@ -245,19 +257,57 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    function downLoadCV() {
+        document.getElementById('downloadCV').addEventListener('click', function () {
+            const link = document.createElement('a');
+            link.href = data.CV.cvPath;
+            link.download = data.CV.downloadFileName; // Set the desired filename (optional)
+
+
+            // Append to the body and click it
+            document.body.appendChild(link);
+            link.click();
+
+            // Clean up (remove the link)
+            document.body.removeChild(link);
+        });
+    }
+
+    function openSourceCode() {
+        document.getElementById('sourceCode').addEventListener('click', function () {
+            const link = document.createElement('a');
+            link.href = data.sourceCode;
+            link.target = '_blank';
+
+            // Append to the body and click it
+            document.body.appendChild(link);
+            link.click();
+
+            // Clean up (remove the link)
+            document.body.removeChild(link);
+        });
+    }
+
     loadProjects();
     loadSkills();
+    downLoadCV();
+    openSourceCode();
 
-    document.getElementById('downloadCV').addEventListener('click', function () {
-        const link = document.createElement('a');
-        link.href = data.CV.cvPath; 
-        link.download = data.CV.downloadFileName;  // Set the desired filename (optional)
+    // mobile navigation menu
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('nav');
+        navToggle.addEventListener('click', function (event) {
+            // Prevent the click from immediately closing the menu
+            event.stopPropagation();
+            nav.classList.toggle('show');
+        });
 
-        // Append to the body and click it
-        document.body.appendChild(link);
-        link.click();
-
-        // Clean up (remove the link)
-        document.body.removeChild(link);
-    });
+        document.addEventListener('click', function (event) {
+            // Check if the click is outside of the nav and the navToggle
+            if (!nav.contains(event.target) && event.target !== navToggle) {
+                nav.classList.remove('show');
+            }
+        });
+    }
 });
