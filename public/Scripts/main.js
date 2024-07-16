@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const LIGHT_THEME_CLASS = 'light-theme';
     currentTheme = 0;
 
-    const response = await fetch(`Data/Data.json?v=3`);
+    const response = await fetch(`Data/Data.json?v=4`);
     const data = await response.json();
 
     const updateThemeButtonTextAndIcon = (newTheme) => {
@@ -261,14 +261,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('downloadCV').addEventListener('click', function () {
             const link = document.createElement('a');
             link.href = data.CV.cvPath;
-            link.download = data.CV.downloadFileName; // Set the desired filename (optional)
+            link.download = data.CV.downloadFileName;
 
-
-            // Append to the body and click it
             document.body.appendChild(link);
             link.click();
-
-            // Clean up (remove the link)
             document.body.removeChild(link);
         });
     }
@@ -279,11 +275,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             link.href = data.sourceCode;
             link.target = '_blank';
 
-            // Append to the body and click it
             document.body.appendChild(link);
             link.click();
-
-            // Clean up (remove the link)
             document.body.removeChild(link);
         });
     }
