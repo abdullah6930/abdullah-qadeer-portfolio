@@ -101,12 +101,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         projectPreviewImage.src = project.image;
         var hasVideo = "videoURL" in project;
         if(hasVideo)
-            projectPreviewVideo.src = project.videoURL;
+        {
+            projectPreviewImage.style.display = "none";
+            projectPreviewImage.style.opacity = 0;
 
-        projectPreviewImage.style.display = hasVideo ? "none" : "block";
-        projectPreviewImage.style.opacity = hasVideo ? 0 : 1;
-        projectPreviewVideo.style.display = hasVideo ? "block" : "none";
-        projectPreviewVideo.style.opacity = hasVideo ? 1 : 0;
+            projectPreviewVideo.src = project.videoURL;
+            projectPreviewVideo.style.display = "block";
+            projectPreviewVideo.style.opacity = 1;
+        }
+        else {
+            projectPreviewImage.style.display = "block";
+            projectPreviewImage.style.opacity = 1;
+            
+            projectPreviewVideo.style.display = "none";
+            projectPreviewVideo.style.opacity = 0;
+        }
     }
 
     // Function to load projects
