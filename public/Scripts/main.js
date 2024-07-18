@@ -6,8 +6,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     const LIGHT_THEME_CLASS = 'light-theme';
     currentTheme = 0;
 
-    const response = await fetch(`Data/Data.json?v=6`);
+    const response = await fetch(`Data/Data.json?v=8`);
     const data = await response.json();
+
+    function setFavicon() {
+        var faviconPath = data.favicon;
+        var faviconElement = document.getElementById('favicon');
+        if (faviconElement)
+            faviconElement.href = faviconPath;
+        else {
+            // If the favicon element does not exist, create it
+            faviconElement = document.createElement('link');
+            faviconElement.id = 'favicon';
+            faviconElement.rel = 'icon';
+            faviconElement.href = faviconPath;
+            document.head.appendChild(faviconElement);
+        }
+    }
+    
+    setFavicon();
 
     const updateThemeButtonTextAndIcon = (newTheme) => {
         const iconClass = newTheme === DARK_THEME_CLASS ? 'fa-moon' : 'fa-sun';
@@ -19,13 +36,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         themeToggle.innerHTML = (newTheme === DARK_THEME_CLASS ? 'Dark Mode' : 'Light Mode') + ` <i class="fa-solid ${iconClass}" id="theme-icon"></i>`;
     };
 
-    // const updateIconColors = (newTheme) => {
-    //     const contactLinks = document.querySelectorAll('.contact-link i');
-    //     contactLinks.forEach(link => {
-    //         link.style.color = '';
-    //     });
-    // };
-
     // Add event listener for theme toggle button click
     themeToggle.addEventListener('click', () => {
         const currentThemeClass = document.body.classList.contains(DARK_THEME_CLASS) ? DARK_THEME_CLASS : LIGHT_THEME_CLASS;
@@ -35,7 +45,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.body.classList.add(newThemeClass);
 
         updateThemeButtonTextAndIcon(newThemeClass);
-        // updateIconColors(newThemeClass); // Update icon colors when theme mode changes
         currentTheme = newThemeClass == DARK_THEME_CLASS ? 1 : 0;
         localStorage.setItem(THEME_MODE, currentTheme);
     });
@@ -54,7 +63,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         var newTheme = currentTheme == 0 ? LIGHT_THEME_CLASS : DARK_THEME_CLASS;
         body.classList.toggle(newTheme);
         updateThemeButtonTextAndIcon(newTheme);
-        // updateIconColors(newTheme); // Update icon colors when theme mode changes
     };
 
     currentTheme = localStorage.getItem(THEME_MODE);
@@ -285,7 +293,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     openSourceCode();
 
     // mobile navigation menu
-    if (window.matchMedia("(max-width: 768px)").matches) {
+    if (window.matchMedia("(max-width: 858px)").matches) {
         const navToggle = document.querySelector('.nav-toggle');
         const nav = document.querySelector('nav');
         navToggle.addEventListener('click', function (event) {

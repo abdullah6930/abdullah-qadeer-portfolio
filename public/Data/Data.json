@@ -1,4 +1,6 @@
 {
+    "profilePicture":"Images/profilePicture.jpg",
+    "favicon":"Images/profilePicture.jpg",
     "sourceCode":"https://github.com/abdullah6930/abdullah-qadeer-portfolio",
     "CV": {
         "downloadFileName": "Abdullah Qadeer - Unity Developer",
