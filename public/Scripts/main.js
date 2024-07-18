@@ -143,12 +143,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     var lastOpenedProjectButton = null;
     var lastOpenedProjectButtonText = '';
 
-    function toggleProjectDescription(event, project, projectsContainer, projectPreviewImage, projectPreviewVideo) {
+    function toggleProjectDescription(event, project, projectPreviewImage, projectPreviewVideo) {
 
         previewVideoOrImage(projectPreviewImage, projectPreviewVideo, project);
 
         const button = event.target;
-        const existingDescriptionContainer = projectsContainer.querySelector('.description-container');
+        const existingDescriptionContainer = document.querySelector('.description-container');
 
         if (button.classList.contains('close-button')) {
             // Close the description
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             button.classList.add('project-button');
     
             button.addEventListener('click', (e) => {
-                toggleProjectDescription(e, project, projectsContainer, projectPreviewImage, projectPreviewVideo);
+                toggleProjectDescription(e, project, projectPreviewImage, projectPreviewVideo);
             });
     
             const li = document.createElement('li');
