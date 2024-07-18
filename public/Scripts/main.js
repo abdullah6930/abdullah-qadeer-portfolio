@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const LIGHT_THEME_CLASS = 'light-theme';
     currentTheme = 0;
 
-    const response = await fetch(`Data/Data.json?v=4`);
+    const response = await fetch(`Data/Data.json?v=6`);
     const data = await response.json();
 
     const updateThemeButtonTextAndIcon = (newTheme) => {
@@ -19,14 +19,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         themeToggle.innerHTML = (newTheme === DARK_THEME_CLASS ? 'Dark Mode' : 'Light Mode') + ` <i class="fa-solid ${iconClass}" id="theme-icon"></i>`;
     };
 
-    const updateIconColors = (newTheme) => {
-        const isDarkMode = newTheme == DARK_THEME_CLASS;
-        const iconColor = isDarkMode ? '' : '#4a90e2';
-        const contactLinks = document.querySelectorAll('.contact-link i');
-        contactLinks.forEach(link => {
-            link.style.color = iconColor;
-        });
-    };
+    // const updateIconColors = (newTheme) => {
+    //     const contactLinks = document.querySelectorAll('.contact-link i');
+    //     contactLinks.forEach(link => {
+    //         link.style.color = '';
+    //     });
+    // };
 
     // Add event listener for theme toggle button click
     themeToggle.addEventListener('click', () => {
@@ -37,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.body.classList.add(newThemeClass);
 
         updateThemeButtonTextAndIcon(newThemeClass);
-        updateIconColors(newThemeClass); // Update icon colors when theme mode changes
+        // updateIconColors(newThemeClass); // Update icon colors when theme mode changes
         currentTheme = newThemeClass == DARK_THEME_CLASS ? 1 : 0;
         localStorage.setItem(THEME_MODE, currentTheme);
     });
@@ -56,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         var newTheme = currentTheme == 0 ? LIGHT_THEME_CLASS : DARK_THEME_CLASS;
         body.classList.toggle(newTheme);
         updateThemeButtonTextAndIcon(newTheme);
-        updateIconColors(newTheme); // Update icon colors when theme mode changes
+        // updateIconColors(newTheme); // Update icon colors when theme mode changes
     };
 
     currentTheme = localStorage.getItem(THEME_MODE);

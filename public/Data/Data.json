@@ -101,34 +101,30 @@
     "skills": [
         {
             "skill": "Unity Game Engine",
-            "percentage": 90
+            "percentage": 95
         },
         {
             "skill": "C# Programming",
-            "percentage": 85
+            "percentage": 90
         },
         {
-            "skill": "Photon Game Server",
-            "percentage": 80
+            "skill": ".NET Core",
+            "percentage": 70
         },
         {
             "skill": "Game Design",
             "percentage": 75
         },
         {
-            "skill": "Adobe Illustrator",
-            "percentage": 70
-        },
-        {
             "skill": "VR Development",
-            "percentage": 95
+            "percentage": 85
         },
         {
             "skill": "Javascript",
             "percentage": 50
         },
         {
-            "skill": "HTML and CSS",
+            "skill": "HTML & CSS",
             "percentage": 56
         }
     ]

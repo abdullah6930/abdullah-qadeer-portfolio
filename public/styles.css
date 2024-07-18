@@ -179,8 +179,7 @@ p {
     width: 100%;
     background: var(--section-background);
     box-sizing: border-box;
-    padding: 20px; /* Optional padding for some space around the content */
-    /* background: url('images/home_bg.jpg') no-repeat center center; */
+    padding: 20px;
     background-size: cover;
 }
 
@@ -194,7 +193,7 @@ p {
     justify-content: center;
     background: var(--section-background);
     box-sizing: border-box;
-    padding: 20px; /* Optional padding for some space around the content */
+    padding: 20px;
     user-select: none;
 }
 
@@ -209,23 +208,11 @@ footer {
     color: var(--footer-text-color);
     text-align: center;
     padding: 1em 0;
-    position: fixed;
     width: 100%;
     bottom: 0;
     transition: background 0.3s, color 0.3s;
 }
 
-
-#contact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--section-background);
-    box-sizing: border-box;
-    padding: 20px; /* Optional padding for some space around the content */
-    user-select: none;
-    margin-bottom: 30px;
-}
 
 .contact-link {
     color: var(--button-text-color);
@@ -245,7 +232,7 @@ footer {
 #projects-section {
     background: var(--section-background);
     box-sizing: border-box;
-    padding: 20px; /* Optional padding for some space around the content */
+    padding: 20px;
     user-select: none;
 }
 
@@ -258,13 +245,13 @@ footer {
 }
 
 .description-container {
-    background: var(--description-background); /* Use the new description background color */
-    color: var(--description-text-color); /* Use the new description text color */
-    border: 2px solid var(--description-border-color); /* Use the new description border color */
+    background: var(--description-background);
+    color: var(--description-text-color);
+    border: 2px solid var(--description-border-color);
     padding: 1em;
     margin-top: 1em;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for emphasis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .description-container h2 {
@@ -292,9 +279,9 @@ footer {
 #project-preview {
     width: 45%;
     padding: 20px;
-    display: flex;           /* Enable flexbox */
-    align-items: center;    /* Vertically center items */
-    justify-content: center; /* Horizontally center items (optional) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #project-preview img {
@@ -302,7 +289,7 @@ footer {
     opacity: 0;
     width: 100%; 
     height: auto;
-    object-fit: cover;  /* Fill the space, maintaining aspect ratio */
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -323,7 +310,7 @@ footer {
     padding: 20px;
     user-select: none;
     margin-bottom: 30px;
-    gap: 20px; /* Space between buttons */
+    gap: 20px;
 }
 
 .section-description-buttons button {
@@ -333,16 +320,16 @@ footer {
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
     font-size: 1em;
-    width: 200px; /* Adjust width to fit content */
+    width: 200px;
     height: 50px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     border-radius: 10px;
-    display: flex; /* Flex container for button content */
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
-    padding: 0 20px; /* Add padding for horizontal spacing inside buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
 }
 
 .section-description-buttons button:hover {
@@ -352,13 +339,13 @@ footer {
 }
 
 .section-description-buttons img{
-    max-height: 100%; /* Ensure the image and icon scale properly */
-    vertical-align: middle; /* Align vertically */
+    max-height: 100%;
+    vertical-align: middle;
 }
 
 .section-description-buttons button:hover img[src$=".svg"] { 
-    max-height: 100%; /* Ensure the image and icon scale properly */
-    vertical-align: middle; /* Align vertically */
+    max-height: 100%;
+    vertical-align: middle;
     filter: invert(100%); 
 }
 
@@ -419,8 +406,8 @@ footer {
 
 .googleplay-link-button {
     display: inline-block;
-    background: var(--link-button-background); /* Default value if var is not set */
-    color: var(--link-button-text-color); /* Default value if var is not set */
+    background: var(--link-button-background);
+    color: var(--link-button-text-color);
     border: 2px solid var(--link-button-border-color);
     padding: 0.75em 1.25em;
     cursor: pointer;
@@ -428,7 +415,7 @@ footer {
     font-size: 1.1em;
     font-weight: bold;
     text-transform: uppercase;
-    max-width: 100%; /* Ensure button does not exceed the container width */
+    max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -458,7 +445,7 @@ footer {
     justify-content: center;
     background: var(--section-background);
     box-sizing: border-box;
-    padding: 20px; /* Optional padding for some space around the content */
+    padding: 20px;
     user-select: none;
     margin-bottom: 30px;
 }
@@ -546,7 +533,7 @@ footer {
     #projects-section {
         background: var(--section-background);
         box-sizing: border-box;
-        padding: 20px; /* Optional padding for some space around the content */
+        padding: 20px;
         user-select: none;
     }
 
