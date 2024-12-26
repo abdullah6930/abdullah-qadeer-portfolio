@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const LIGHT_THEME_CLASS = 'light-theme';
     currentTheme = 0;
 
-    const response = await fetch(`Data/Data.json?v=8`);
+    const response = await fetch(`Data/Data.json?v=9`);
     const data = await response.json();
 
     function setFavicon() {
