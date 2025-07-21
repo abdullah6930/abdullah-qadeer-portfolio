@@ -1,0 +1,142 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { FiGithub, FiExternalLink, FiPlay } from 'react-icons/fi';
+import './Projects.css';
+
+const Projects = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+
+  const projects = [
+    {
+      title: "VR Adventure Game",
+      description: "Immersive VR game built with Unity and Oculus SDK featuring realistic physics and interactive environments.",
+      technologies: ["Unity 3D", "C#", "VR", "Oculus SDK"],
+      github: "https://github.com/abdullahqadeer/vr-adventure",
+      demo: "https://vr-adventure-demo.com",
+      featured: true
+    },
+    {
+      title: "AI-Powered Chatbot",
+      description: "Intelligent chatbot system with natural language processing and machine learning capabilities.",
+      technologies: ["Python", "TensorFlow", "NLP", ".NET Core"],
+      github: "https://github.com/abdullahqadeer/ai-chatbot",
+      demo: "https://ai-chatbot-demo.com",
+      featured: false
+    },
+    {
+      title: "AR Shopping App",
+      description: "Mobile AR application allowing users to visualize products in their real environment before purchase.",
+      technologies: ["Unity", "ARCore", "C#", "Firebase"],
+      github: "https://github.com/abdullahqadeer/ar-shopping",
+      demo: "https://ar-shopping-demo.com",
+      featured: true
+    },
+    {
+      title: "Real-time Multiplayer Game",
+      description: "Online multiplayer game with real-time synchronization and server-side validation.",
+      technologies: ["Unity", "Mirror Networking", "C#", "Node.js"],
+      github: "https://github.com/abdullahqadeer/multiplayer-game",
+      demo: "https://multiplayer-game-demo.com",
+      featured: false
+    }
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  return (
+    <section id="projects" className="projects">
+      <div className="container">
+        <motion.div
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
+          <motion.div className="section-header" variants={itemVariants}>
+            <h2 className="section-title">Featured Projects</h2>
+            <p className="section-subtitle">
+              A showcase of my recent work in game development, VR/AR, and AI integration
+            </p>
+          </motion.div>
+
+          <div className="projects-grid">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                className={`project-card ${project.featured ? 'featured' : ''}`}
+                variants={itemVariants}
+                whileHover={{ y: -10, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {project.featured && (
+                  <div className="featured-badge">
+                    <FiPlay />
+                    Featured
+                  </div>
+                )}
+                
+                <div className="project-content">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description">{project.description}</p>
+                  
+                  <div className="project-tech">
+                    {project.technologies.map((tech, i) => (
+                      <span key={i} className="tech-badge">{tech}</span>
+                    ))}
+                  </div>
+                  
+                  <div className="project-actions">
+                    <a 
+                      href={project.github} 
+                      className="project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FiGithub />
+                      Code
+                    </a>
+                    <a 
+                      href={project.demo} 
+                      className="project-link primary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FiExternalLink />
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects; 
