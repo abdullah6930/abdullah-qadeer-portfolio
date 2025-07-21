@@ -75,9 +75,9 @@ const Footer = () => {
             <div className="footer-contact">
               <h4>Get In Touch</h4>
               <div className="contact-info">
-                <a href="mailto:abdullah.qadeer@email.com" className="contact-item">
+                <a href="mailto:abdullahqadeerdev@gmail.com" className="contact-item">
                   <FiMail />
-                  <span>abdullah.qadeer@email.com</span>
+                  <span>abdullahqadeerdev@gmail.com</span>
                 </a>
               </div>
               <div className="availability">

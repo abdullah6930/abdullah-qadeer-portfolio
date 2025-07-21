@@ -27,8 +27,8 @@ const Contact = () => {
     {
       icon: FiMail,
       label: 'Email',
-      value: 'abdullah.qadeer@email.com',
-      href: 'mailto:abdullah.qadeer@email.com'
+      value: 'abdullahqadeerdev@gmail.com',
+      href: 'mailto:abdullahqadeerdev@gmail.com'
     },
     {
       icon: FiPhone,

@@ -44,6 +44,7 @@
 
 .footer-brand {
   max-width: 400px;
+  margin-top: var(--spacing-lg);
 }
 
 .brand-logo {
@@ -78,6 +79,7 @@
   color: var(--text-primary);
   font-size: 1.125rem;
   margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
 }
 
 .nav-list {
