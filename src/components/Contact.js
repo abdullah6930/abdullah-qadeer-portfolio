@@ -33,13 +33,13 @@ const Contact = () => {
     {
       icon: FiPhone,
       label: 'Phone',
-      value: '+92 300 1234567',
+      value: '+92 311 5799710',
       href: 'tel:+923001234567'
     },
     {
       icon: FiMapPin,
       label: 'Location',
-      value: 'Karachi, Pakistan',
+      value: 'Rawalpindi, Pakistan',
       href: '#'
     }
   ];
@@ -48,12 +48,12 @@ const Contact = () => {
     {
       icon: FiGithub,
       label: 'GitHub',
-      href: 'https://github.com/abdullahqadeer'
+      href: 'https://github.com/abdullah6930'
     },
     {
       icon: FiLinkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/abdullah-qadeer'
+      href: 'https://linkedin.com/in/abdullahqadeerdev'
     },
     {
       icon: FiExternalLink,

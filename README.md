@@ -180,8 +180,8 @@ Update personal details in respective component files:
 
 **Abdullah Qadeer**
 - Email: your.email@example.com
-- LinkedIn: [linkedin.com/in/abdullah-qadeer](https://linkedin.com/in/abdullah-qadeer)
-- GitHub: [github.com/abdullahqadeer](https://github.com/abdullahqadeer)
+- LinkedIn: [linkedin.com/in/abdullahqadeerdev](https://linkedin.com/in/abdullahqadeerdev)
+- GitHub: [github.com/abdullah6930](https://github.com/abdullah6930)
 - Portfolio: [abdullah-portfolio.com](https://abdullah-portfolio.com)
 
 ## 📄 License

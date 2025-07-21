@@ -15,7 +15,7 @@ const Experience = () => {
       company: "Tech Solutions Inc",
       position: "Senior Software Engineer",
       period: "2021 - Present",
-      location: "Karachi, Pakistan",
+      location: "Rawalpindi, Pakistan",
       description: "Leading Unity game development projects and VR/AR solutions. Mentoring junior developers and architecting scalable systems.",
       technologies: ["Unity 3D", "C#", "VR/AR", ".NET Core", "SQL Server"]
     },

@@ -26,8 +26,8 @@ const Header = () => {
   ];
 
   const socialLinks = [
-    { icon: FiGithub, href: 'https://github.com/abdullahqadeer', label: 'GitHub' },
-    { icon: FiLinkedin, href: 'https://linkedin.com/in/abdullah-qadeer', label: 'LinkedIn' },
+    { icon: FiGithub, href: 'https://github.com/abdullah6930', label: 'GitHub' },
+    { icon: FiLinkedin, href: 'https://linkedin.com/in/abdullahqadeerdev', label: 'LinkedIn' },
     { icon: FiExternalLink, href: 'https://abdullah-portfolio.com', label: 'Portfolio' }
   ];
 
