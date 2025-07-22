@@ -4,8 +4,6 @@ A modern, responsive portfolio website built with React.js showcasing my skills 
 
 🌐 **Live Demo**: [https://abdullah-qadeer-portfolio.web.app/](https://abdullah-qadeer-portfolio.web.app/)
 
-![Portfolio Preview](https://via.placeholder.com/800x400/0070f3/ffffff?text=Portfolio+Preview)
-
 ## 🚀 Features
 
 - **Modern Design**: Clean, professional UI with dark theme and glass morphism effects
@@ -23,15 +21,15 @@ A modern, responsive portfolio website built with React.js showcasing my skills 
   - **YouTube Video Integration**: Embedded demo videos
   - **Technology Tags**: Visual representation of tech stack
   - **Conditional Links**: Shows GitHub/Demo buttons only when available
+  - **Official Google Play Badges**: Professional badges for mobile games
 - **Functional Contact Form**:
   - **EmailJS Integration**: Real email sending capability
   - **Security Features**: Domain restrictions, rate limiting, spam protection
   - **Form Validation**: Client-side validation with error handling
   - **Multiple Status States**: Success, error, sending, and rate limit messages
 - **Comprehensive Sections**:
-  - Hero with dynamic role display
-  - About with specialties and achievements
-  - Experience timeline
+  - Hero with dynamic role display and introduction
+  - Experience timeline with LinkedIn company links
   - Categorized projects with rich media content
   - Skills with proficiency levels
   - Working contact form with email notifications
@@ -133,8 +131,9 @@ This creates an optimized production build in the `build` folder.
 abdullah-qadeer-portfolio/
 ├── public/
 │   ├── images/             # Static assets for projects
-│   │   └── projects/       # Project screenshots and media
-│   │       └── gemini-ai-trader/  # Gemini AI Trader screenshots
+│   │   ├── projects/       # Project screenshots and media
+│   │   │   └── gemini-ai-trader/  # Gemini AI Trader screenshots
+│   │   └── badges/         # Google Play badges
 │   ├── index.html          # Main HTML file
 │   ├── favicon.ico         # Website favicon
 │   └── manifest.json       # PWA manifest
@@ -144,9 +143,7 @@ abdullah-qadeer-portfolio/
 │   │   ├── Header.css      # Header styles
 │   │   ├── Hero.js         # Hero section with typing animation
 │   │   ├── Hero.css        # Hero styles
-│   │   ├── About.js        # About section
-│   │   ├── About.css       # About styles
-│   │   ├── Experience.js   # Experience timeline
+│   │   ├── Experience.js   # Experience timeline with LinkedIn links
 │   │   ├── Experience.css  # Experience styles
 │   │   ├── Projects.js     # Projects with categories & modals
 │   │   ├── Projects.css    # Projects styles (modal & lightbox)
@@ -219,7 +216,8 @@ abdullah-qadeer-portfolio/
   technologies: ["React", "Node.js", "MongoDB"],
   category: "Enterprise Systems", // Required category
   github: "https://github.com/username/repo", // Optional
-  demo: "https://demo-url.com", // Optional
+  website: "https://example.com", // For web applications
+  playStore: "https://play.google.com/store/apps/details?id=com.example", // For mobile games
   featured: true, // Boolean for featured badge
   images: [...],
   videos: [...]
@@ -321,9 +319,8 @@ firebase deploy
 
 ### Personal Information
 Update personal details in respective component files:
-- `src/components/Hero.js` - Name, roles, statistics
-- `src/components/About.js` - Bio, specialties, achievements
-- `src/components/Experience.js` - Work experience
+- `src/components/Hero.js` - Name, roles, statistics, and introduction
+- `src/components/Experience.js` - Work experience with LinkedIn company links
 - `src/components/Projects.js` - Featured projects data with categories
 - `src/components/Skills.js` - Technical skills
 - `src/components/Contact.js` - Contact information and EmailJS config
@@ -360,6 +357,7 @@ const categories = ['All', 'Web Apps', 'Mobile Apps', 'Desktop', 'Open Source'];
 - **Subway Traffic Racer**: Fast-paced 3D subway racing game
 - **Relieve**: 2D puzzle game with 64 unique levels
 - **Just Catch Boxes**: Hyper-casual game with leaderboard
+- **Google Play Integration**: Official Google Play badges for downloads
 
 ### Open Source Projects
 - **ChatGPT Wrapper for Unity**: Easy ChatGPT integration for Unity projects
@@ -373,6 +371,7 @@ const categories = ['All', 'Web Apps', 'Mobile Apps', 'Desktop', 'Open Source'];
 - Location: Rawalpindi, Pakistan
 - LinkedIn: [linkedin.com/in/abdullahqadeerdev](https://linkedin.com/in/abdullahqadeerdev)
 - GitHub: [github.com/abdullah6930](https://github.com/abdullah6930)
+- Fiverr: [fiverr.com/users/abdullah6930](https://www.fiverr.com/users/abdullah6930)
 - Portfolio: [https://abdullah-qadeer-portfolio.web.app/](https://abdullah-qadeer-portfolio.web.app/)
 
 ## 📄 License
@@ -386,17 +385,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Fonts from [Google Fonts](https://fonts.google.com/)
 - Animations powered by [Framer Motion](https://www.framer.com/motion/)
 - Email functionality by [EmailJS](https://www.emailjs.com/)
+- Official Google Play badges from [Google Partner Marketing Hub](https://partnermarketinghub.withgoogle.com/brands/google-play/visual-identity/badge-guidelines/)
 - Hosting by [Firebase](https://firebase.google.com/)
 
 ## 🔄 Recent Updates
 
+- ✅ **Streamlined Navigation**: Removed About section, focusing on essential content
+- ✅ **Google Play Badges**: Official badges for mobile game downloads
+- ✅ **LinkedIn Company Links**: Direct links to company profiles in experience
+- ✅ **Enhanced Project Links**: Semantic link types (website, playStore, github)
+- ✅ **Fiverr Integration**: Professional freelancing profile access
 - ✅ **EmailJS Integration**: Functional contact form with real email sending
 - ✅ **Project Categories**: Filter projects by type (Enterprise, Games, Open Source)
 - ✅ **Enhanced Security**: Domain restrictions, rate limiting, spam protection
 - ✅ **Firebase Deployment**: Live production deployment with CDN
-- ✅ **Improved UX**: Better form validation and error handling
-- ✅ **Mobile Optimization**: Enhanced responsive design for all devices
-- ✅ **Performance**: Optimized loading and animation performance
 
 ## 🚀 Future Enhancements
 
