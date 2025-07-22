@@ -33,27 +33,73 @@ const Projects = () => {
         "/images/projects/gemini-ai-trader/Stocks Mobile View.png"
       ],
       videos: [
-        // Add YouTube video IDs here when available
       ]
     },
-    // Add more projects here
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with modern design and seamless user experience.",
-      fullDescription: "A complete e-commerce platform built with React and Node.js, featuring product catalog, shopping cart, payment integration, order management, and admin dashboard. Includes advanced features like recommendation engine, inventory management, and real-time notifications.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      github: "https://github.com/example/ecommerce",
-      demo: "https://ecommerce-demo.com",
+      title: "Subway Traffic Racer (Previously Toon Racer 3D)",
+      description: "A fast-paced 3D subway traffic racing game where you play as a car thief, weaving through busy subway streets to evade the police and dodge oncoming vehicles. Outsmart your pursuers and navigate challenging obstacles to reach your destination and complete your daring escape.",
+      fullDescription: "Subway Traffic Racer is a fast-paced 3D subway traffic racing game where you play as a car thief, weaving through busy subway streets to evade the police and dodge oncoming vehicles. Outsmart your pursuers and navigate challenging obstacles to reach your destination and complete your daring escape.",
+      technologies: ["Unity", "Firebase"],
+      demo: "https://play.google.com/store/apps/details?id=com.BoxesLabs.ToonRacer",
       featured: false,
       images: [
-        "https://via.placeholder.com/800x400/E91E63/white?text=Product+Catalog",
-        "https://via.placeholder.com/800x400/9C27B0/white?text=Shopping+Cart",
-        "https://via.placeholder.com/800x400/3F51B5/white?text=Admin+Dashboard"
       ],
       videos: [
-        "dQw4w9WgXcQ"
+        "AfTfzVBIujk"
       ]
-    }
+    },
+    {
+      title: "Relieve",
+      description: "A 2D puzzle game where your goal is to help the ball reach the next gate by avoiding different obstacles.",
+      fullDescription: "Relieve is a 2D puzzle game where your goal is to help the ball reach the next gate by avoiding different obstacles. With 64 unique levels, you'll need to think strategically to solve each puzzle. The game features a minimalist design with smooth gameplay and a calming atmosphere, making it perfect for casual play.\n Each and every level design is hand drawn on paper first. The levels are positioned with difficulty in mind. The game is designed to be played on mobile devices.",
+      technologies: ["Unity", "Firebase"],
+      demo: "https://play.google.com/store/apps/details?id=com.BoxesLabs.Relieve",
+      featured: false,
+      images: [
+      ],
+      videos: [
+        "wnoIDet9-wg"
+      ]
+    },
+    {
+      title: "Just Catch Boxes",
+      description: "A 2D Hyper casual game where you catch boxes to score points.",
+      fullDescription: "Just Catch Boxes is a 2D Hyper casual game where you catch boxes to score points. Each character has different stats like speed and box carrying capacity. The game runs endlessly and the scores are saved in the global leaderboard.",
+      technologies: ["Unity", "Firebase"],
+      demo: "https://play.google.com/store/apps/details?id=com.BoxesLabs.JustCatchBoxes",
+      featured: false,
+      images: [
+      ],
+      videos: [
+        "tGabkt444So"
+      ]
+    },
+    {
+      title: "ChatGPT Wrapper for Unity",
+      description: "A simple wrapper around the ChatGPT API to make it easier to use in Unity.",
+      fullDescription: "This is a simple wrapper around the ChatGPT API to make it easier to use in Unity. It allows you to easily integrate ChatGPT into your Unity projects. It uses the OpenAI API to generate text responses to your prompts. It also allows you to easily add a chat interface to your Unity projects.",
+      technologies: ["Unity", "ChatGPT API"],
+      github: "https://github.com/abdullah6930/ChatGPTWrapper_Unity",
+      featured: false,
+      images: [
+      ],
+      videos: [
+        "Pt9sJFzE8qA"
+      ]
+    },
+    {
+      title: "Mesh Generator for Unity",
+      description: "A tool to generate meshes in Unity in Play Mode.",
+      fullDescription: "Currently user's in unity can change mesh vertices only in edit mode that too with the help of some packages. This project is designed to help users change vertex positions in play mode through Game Window. User's can change vertex positions on x,y and z axis just like they move gameeobjects in editor. The idea behind changing mesh vertices in play mode is to make it easier to be integrated into any project that wants to allow users to interact with 3D objects.",
+      technologies: ["Unity"],
+      github: "https://github.com/abdullah6930/MeshGeneration",
+      featured: false,
+      images: [
+      ],
+      videos: [
+        "PzhMkh2wJgA"
+      ]
+    },
   ];
 
   const containerVariants = {
@@ -216,16 +262,18 @@ const Projects = () => {
                         Code
                       </a>
                     )}
-                    <a 
-                      href={project.demo} 
-                      className="project-link primary"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <FiExternalLink />
-                      Demo
-                    </a>
+                    {project.demo && (
+                      <a 
+                        href={project.demo} 
+                        className="project-link primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <FiExternalLink />
+                        Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -323,15 +371,17 @@ const Projects = () => {
                       View Code
                     </a>
                   )}
-                  <a 
-                    href={selectedProject.demo} 
-                    className="modal-link primary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FiExternalLink />
-                    Live Demo
-                  </a>
+                  {selectedProject.demo && (
+                    <a 
+                      href={selectedProject.demo} 
+                      className="modal-link primary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FiExternalLink />
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
