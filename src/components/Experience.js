@@ -12,28 +12,36 @@ const Experience = () => {
 
   const experiences = [
     {
-      company: "Tech Solutions Inc",
-      position: "Senior Software Engineer",
-      period: "2021 - Present",
+      company: "Arthur Technologies GmbH",
+      position: "Unity Developer",
+      period: "04/2022 - Present",
       location: "Rawalpindi, Pakistan",
-      description: "Leading Unity game development projects and VR/AR solutions. Mentoring junior developers and architecting scalable systems.",
-      technologies: ["Unity 3D", "C#", "VR/AR", ".NET Core", "SQL Server"]
+      description: "",
+      technologies: ["Unity 3D", "C#", "VR/AR", "Photon", ".NET", "WebGL", "GenAI", "Git"]
     },
     {
-      company: "Digital Innovations Ltd",
-      position: "Software Engineer",
-      period: "2019 - 2021",
-      location: "Lahore, Pakistan",
-      description: "Developed interactive applications and games using Unity. Integrated AI/ML features and optimized performance.",
-      technologies: ["Unity", "C#", "Python", "TensorFlow", "PostgreSQL"]
+      company: "The Knights Pvt Ltd",
+      position: "Unity Game Developer",
+      period: "07/2021 - 04/2022",
+      location: "Rawalpindi, Pakistan",
+      description: "Developed interactive applications and games using Unity. Worked on Monetization, Analytics and Gameplay development.",
+      technologies: ["Unity", "C#", "Photon", "Firebase Services", "Git"]
     },
     {
-      company: "Creative Studios",
-      position: "Junior Developer",
-      period: "2018 - 2019",
+      company: "Plasma IT Solutions Pvt Ltd",
+      position: "Unity Game Developer",
+      period: "10/2020 - 06/2021",
       location: "Islamabad, Pakistan",
-      description: "Started career in game development, focusing on mobile games and interactive media projects.",
-      technologies: ["Unity", "C#", "Mobile Development", "Git"]
+      description: "Worked on all aspects of game development, including gameplay, UI, and Optimization.",
+      technologies: ["Unity", "C#", "Firebase Services"]
+    },
+    {
+      company: "StackBuffers Pvt Ltd",
+      position: "Game Developer Intern",
+      period: "10/2019 - 01/2020",
+      location: "Islamabad, Pakistan",
+      description: "Started my career in game development, Developed complete multiplayer games using Unity, Photon and Firebase Services.",
+      technologies: ["Unity", "C#", "Firebase Services", "Photon"]
     }
   ];
 

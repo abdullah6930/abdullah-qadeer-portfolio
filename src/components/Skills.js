@@ -18,7 +18,7 @@ const Skills = () => {
         { name: "Unity 3D", level: 95 },
         { name: "C#", level: 90 },
         { name: "Game Design", level: 85 },
-        { name: "3D Modeling", level: 75 }
+        { name: "Multiplayer Game Development", level: 85 },
       ]
     },
     {
@@ -28,7 +28,6 @@ const Skills = () => {
         { name: "Oculus SDK", level: 90 },
         { name: "ARCore/ARKit", level: 85 },
         { name: "Unity XR", level: 88 },
-        { name: "Spatial Computing", level: 80 }
       ]
     },
     {
@@ -36,9 +35,11 @@ const Skills = () => {
       icon: FiDatabase,
       skills: [
         { name: ".NET Core", level: 88 },
-        { name: "SQL Server", level: 85 },
         { name: "RESTful APIs", level: 90 },
-        { name: "Entity Framework", level: 82 }
+        { name: "PostgreSQL Server", level: 50 },
+        { name: "Entity Framework", level: 55 },
+        { name: "Photon Quantum", level: 80 },
+        { name: "Firebase Services", level: 80 },
       ]
     },
     {
@@ -46,9 +47,16 @@ const Skills = () => {
       icon: FiSmartphone,
       skills: [
         { name: "Android", level: 85 },
-        { name: "iOS", level: 80 },
-        { name: "Cross-Platform", level: 88 },
-        { name: "React Native", level: 75 }
+        { name: "iOS", level: 40 },
+      ]
+    },
+    {
+      title: "AI Prompt Engineering",
+      icon: FiSmartphone,
+      skills: [
+        { name: "ChatGPT API", level: 85 },
+        { name: "Claude API", level: 50 },
+        { name: "Gemini API", level: 60 }
       ]
     }
   ];

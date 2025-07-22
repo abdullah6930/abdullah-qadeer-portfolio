@@ -311,27 +311,6 @@ const Contact = () => {
                 ))}
               </div>
 
-              <div className="social-section">
-                <h3>Follow Me</h3>
-                <div className="social-links">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={social.label}
-                      href={social.href}
-                      className="social-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variants={itemVariants}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <social.icon />
-                      <span className="social-tooltip">{social.label}</span>
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
-
               <div className="response-time">
                 <h4>Response Time</h4>
                 <p>I typically respond within 24 hours during business days.</p>

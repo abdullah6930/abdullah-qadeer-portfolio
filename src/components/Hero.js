@@ -14,7 +14,7 @@ const Hero = () => {
     'VR/AR Developer',
     'Game Developer',
     '.NET Core Developer',
-    'AI Enthusiast'
+    'Multiplayer Game Developer'
   ];
 
   useEffect(() => {

@@ -44,6 +44,11 @@ const About = () => {
       description: "Specialized in virtual and augmented reality solutions using Unity XR, Oculus SDK, and cutting-edge immersive technologies."
     },
     {
+      icon: FiPlay,
+      title: "Multiplayer Game Development",
+      description: "Expert in creating multiplayer games using Unity and Photon."
+    },
+    {
       icon: FiCode,
       title: ".NET Core Development",
       description: "Proficient in building robust backend systems, APIs, and enterprise applications using .NET Core and C#."

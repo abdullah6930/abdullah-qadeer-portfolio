@@ -29,7 +29,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/abdullah6930', label: 'GitHub' },
     { icon: FiLinkedin, href: 'https://linkedin.com/in/abdullahqadeerdev', label: 'LinkedIn' },
-    { icon: FiExternalLink, href: 'https://abdullah-portfolio.com', label: 'Portfolio' }
+    { icon: FiExternalLink, href: 'https://www.fiverr.com/users/abdullah6930', label: 'Fiverr' }
   ];
 
   return (
@@ -83,24 +83,6 @@ const Footer = () => {
               <div className="availability">
                 <div className="status-indicator"></div>
                 <span>Available for new projects</span>
-              </div>
-            </div>
-
-            <div className="footer-social">
-              <h4>Follow Me</h4>
-              <div className="social-links">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="social-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                  >
-                    <social.icon />
-                  </a>
-                ))}
               </div>
             </div>
           </div>

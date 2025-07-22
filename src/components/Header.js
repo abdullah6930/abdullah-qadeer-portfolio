@@ -28,16 +28,27 @@ const Header = () => {
   const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/abdullah6930', label: 'GitHub' },
     { icon: FiLinkedin, href: 'https://linkedin.com/in/abdullahqadeerdev', label: 'LinkedIn' },
-    { icon: FiExternalLink, href: 'https://abdullah-portfolio.com', label: 'Portfolio' }
+    { icon: FiExternalLink, href: 'https://www.fiverr.com/users/abdullah6930', label: 'Fiverr' }
   ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToSection = (sectionId) => {
+    console.log('Navigating to:', sectionId);
+    const element = document.querySelector(sectionId);
+    console.log('Found element:', element);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.error('Element not found:', sectionId);
+    }
+  };
+
   const handleNavClick = (href) => {
     setIsMenuOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection(href);
   };
 
   return (
