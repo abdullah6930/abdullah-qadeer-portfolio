@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiGithub, FiExternalLink, FiPlay, FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiGithub, FiExternalLink, FiPlay, FiX, FiChevronLeft, FiChevronRight, FiGlobe } from 'react-icons/fi';
 import './Projects.css';
 
 const Projects = () => {
@@ -23,7 +23,7 @@ const Projects = () => {
       description: "Intelligent Stock and Crypto Analysis Platform - A modern web application designed to help retail traders make smarter investment decisions using AI-driven insights and real-time market data.",
       fullDescription: "Gemini AI Trader is a comprehensive trading platform built with ASP.NET Core, React.js, and PostgreSQL, deployed on Microsoft Azure. The platform combines financial technology with artificial intelligence to deliver a seamless trading assistant experience. Key features include: Dashboard with market overview, performance metrics, and news; Portfolio Management for stocks, crypto, ETFs with real-time P&L tracking; AI Chat powered by ChatGPT for market analysis and price comparisons using Alpha Vantage data; Market Analysis with trending stocks and sector performance; Pre-Market & After Hours insights with candlestick charts and technical analysis; Watchlist functionality; Latest market news with filtering; Account management with subscription tiers (Basic, Professional, Premium) offering different levels of access to advanced features, larger watchlists, and enhanced AI capabilities.",
       technologies: ["React.js", "ASP.NET Core", "PostgreSQL", "Azure", "ChatGPT API", "Alpha Vantage API", "Stripe"],
-      demo: "https://www.geminitraderai.com/",
+      website: "https://www.geminitraderai.com/",
       category: "Enterprise Systems",
       featured: true,
       images: [
@@ -41,10 +41,10 @@ const Projects = () => {
     },
     {
       title: "Subway Traffic Racer (Previously Toon Racer 3D)",
-      description: "A fast-paced 3D subway traffic racing game where you play as a car thief, weaving through busy subway streets to evade the police and dodge oncoming vehicles. Outsmart your pursuers and navigate challenging obstacles to reach your destination and complete your daring escape.",
+      description: "A fast-paced 3D endless car racing game where you play as a car thief.",
       fullDescription: "Subway Traffic Racer is a fast-paced 3D subway traffic racing game where you play as a car thief, weaving through busy subway streets to evade the police and dodge oncoming vehicles. Outsmart your pursuers and navigate challenging obstacles to reach your destination and complete your daring escape.",
       technologies: ["Unity", "Firebase"],
-      demo: "https://play.google.com/store/apps/details?id=com.BoxesLabs.ToonRacer",
+      playStore: "https://play.google.com/store/apps/details?id=com.BoxesLabs.ToonRacer",
       category: "Indie Games",
       featured: false,
       images: [
@@ -58,7 +58,7 @@ const Projects = () => {
       description: "A 2D puzzle game where your goal is to help the ball reach the next gate by avoiding different obstacles.",
       fullDescription: "Relieve is a 2D puzzle game where your goal is to help the ball reach the next gate by avoiding different obstacles. With 64 unique levels, you'll need to think strategically to solve each puzzle. The game features a minimalist design with smooth gameplay and a calming atmosphere, making it perfect for casual play.\n Each and every level design is hand drawn on paper first. The levels are positioned with difficulty in mind. The game is designed to be played on mobile devices.",
       technologies: ["Unity", "Firebase"],
-      demo: "https://play.google.com/store/apps/details?id=com.BoxesLabs.Relieve",
+      playStore: "https://play.google.com/store/apps/details?id=com.BoxesLabs.Relieve",
       category: "Indie Games",
       featured: false,
       images: [
@@ -72,7 +72,7 @@ const Projects = () => {
       description: "A 2D Hyper casual game where you catch boxes to score points.",
       fullDescription: "Just Catch Boxes is a 2D Hyper casual game where you catch boxes to score points. Each character has different stats like speed and box carrying capacity. The game runs endlessly and the scores are saved in the global leaderboard.",
       technologies: ["Unity", "Firebase"],
-      demo: "https://play.google.com/store/apps/details?id=com.BoxesLabs.JustCatchBoxes",
+      playStore: "https://play.google.com/store/apps/details?id=com.BoxesLabs.JustCatchBoxes",
       category: "Indie Games",
       featured: false,
       images: [
@@ -284,20 +284,35 @@ const Projects = () => {
                         onClick={(e) => e.stopPropagation()}
                       >
                         <FiGithub />
-                        Code
+                        Source Code
                       </a>
                     )}
-                    {project.demo && (
-                    <a 
-                      href={project.demo} 
-                      className="project-link primary"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <FiExternalLink />
-                      Demo
-                    </a>
+                    {project.website && (
+                      <a 
+                        href={project.website} 
+                        className="project-link primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <FiGlobe />
+                        Live Website
+                      </a>
+                    )}
+                    {project.playStore && (
+                      <a 
+                        href={project.playStore} 
+                        className="play-store-badge"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <img 
+                          src="/images/badges/google-play-badge.png" 
+                          alt="Get it on Google Play"
+                          className="play-badge-img"
+                        />
+                      </a>
                     )}
                   </div>
                 </div>
@@ -393,19 +408,33 @@ const Projects = () => {
                       rel="noopener noreferrer"
                     >
                       <FiGithub />
-                      View Code
+                      View Source Code
                     </a>
                   )}
-                  {selectedProject.demo && (
-                  <a 
-                    href={selectedProject.demo} 
-                    className="modal-link primary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FiExternalLink />
-                    Live Demo
-                  </a>
+                  {selectedProject.website && (
+                    <a 
+                      href={selectedProject.website} 
+                      className="modal-link primary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FiGlobe />
+                      Visit Website
+                    </a>
+                  )}
+                  {selectedProject.playStore && (
+                    <a 
+                      href={selectedProject.playStore} 
+                      className="play-store-badge modal-play-badge"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img 
+                        src="/images/badges/google-play-badge.png" 
+                        alt="Get it on Google Play"
+                        className="play-badge-img"
+                      />
+                    </a>
                   )}
                 </div>
               </div>

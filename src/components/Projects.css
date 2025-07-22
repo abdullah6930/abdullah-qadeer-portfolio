@@ -521,6 +521,61 @@
   font-weight: 500;
 }
 
+/* Google Play Badge Styles */
+.play-store-badge {
+  display: inline-block;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  border: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.play-badge-img {
+  height: 40px;
+  width: auto;
+  min-width: 132px;
+  display: block;
+  transition: all var(--transition-fast);
+  filter: brightness(1);
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  vertical-align: top;
+}
+
+.play-store-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: transparent;
+}
+
+.play-store-badge:hover .play-badge-img {
+  filter: brightness(1.05);
+}
+
+/* Modal Play Badge */
+.modal-play-badge {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.modal-play-badge .play-badge-img {
+  height: 48px;
+  min-width: 158px;
+}
+
+.modal-play-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  background: transparent;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .project-categories {
@@ -544,10 +599,26 @@
   
   .project-actions {
     flex-direction: column;
+    align-items: stretch;
   }
   
   .project-link {
     justify-content: center;
+  }
+
+  /* Mobile Play Badge */
+  .play-store-badge {
+    align-self: center;
+  }
+
+  .play-badge-img {
+    height: 36px;
+    min-width: 119px;
+  }
+
+  .modal-play-badge .play-badge-img {
+    height: 44px;
+    min-width: 145px;
   }
 
   /* Modal responsive styles */
