@@ -288,16 +288,16 @@ const Projects = () => {
                       </a>
                     )}
                     {project.demo && (
-                      <a 
-                        href={project.demo} 
-                        className="project-link primary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <FiExternalLink />
-                        Demo
-                      </a>
+                    <a 
+                      href={project.demo} 
+                      className="project-link primary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <FiExternalLink />
+                      Demo
+                    </a>
                     )}
                   </div>
                 </div>
@@ -397,15 +397,15 @@ const Projects = () => {
                     </a>
                   )}
                   {selectedProject.demo && (
-                    <a 
-                      href={selectedProject.demo} 
-                      className="modal-link primary"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FiExternalLink />
-                      Live Demo
-                    </a>
+                  <a 
+                    href={selectedProject.demo} 
+                    className="modal-link primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FiExternalLink />
+                    Live Demo
+                  </a>
                   )}
                 </div>
               </div>
