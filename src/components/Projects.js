@@ -19,30 +19,6 @@ const Projects = () => {
       demo: "https://vr-adventure-demo.com",
       featured: true
     },
-    {
-      title: "AI-Powered Chatbot",
-      description: "Intelligent chatbot system with natural language processing and machine learning capabilities.",
-      technologies: ["Python", "TensorFlow", "NLP", ".NET Core"],
-      github: "https://github.com/abdullah6930/ai-chatbot",
-      demo: "https://ai-chatbot-demo.com",
-      featured: false
-    },
-    {
-      title: "AR Shopping App",
-      description: "Mobile AR application allowing users to visualize products in their real environment before purchase.",
-      technologies: ["Unity", "ARCore", "C#", "Firebase"],
-      github: "https://github.com/abdullah6930/ar-shopping",
-      demo: "https://ar-shopping-demo.com",
-      featured: true
-    },
-    {
-      title: "Real-time Multiplayer Game",
-      description: "Online multiplayer game with real-time synchronization and server-side validation.",
-      technologies: ["Unity", "Mirror Networking", "C#", "Node.js"],
-      github: "https://github.com/abdullah6930/multiplayer-game",
-      demo: "https://multiplayer-game-demo.com",
-      featured: false
-    }
   ];
 
   const containerVariants = {
