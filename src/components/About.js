@@ -116,13 +116,12 @@ const About = () => {
                   I'm Abdullah Qadeer, a dedicated software engineer with a passion for creating 
                   immersive digital experiences. With over 5 years of experience in the industry, 
                   I specialize in Unity game development, VR/AR technologies, .NET Core backend 
-                  development, and AI integration.
+                  development, Multiplayer Game Development, and AI integration.
                 </p>
                 <p>
-                  My journey in software development began with a fascination for interactive 
-                  media and has evolved into expertise across multiple cutting-edge technologies. 
-                  I believe in the power of technology to transform ideas into reality and create 
-                  meaningful user experiences.
+                I started learning software development because I enjoyed making interactive things.
+                Over time, I learned many new technologies. I like using technology to turn ideas into real projects
+                 that people can use and enjoy.
                 </p>
               </div>
 
@@ -163,22 +162,6 @@ const About = () => {
             </motion.div>
           </div>
 
-          <motion.div className="about-values" variants={itemVariants}>
-            <h3 className="values-title">Core Values</h3>
-            <div className="values-grid">
-              {values.map((value, index) => (
-                <motion.div
-                  key={value.title}
-                  className="value-item"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <h4 className="value-title">{value.title}</h4>
-                  <p className="value-description">{value.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

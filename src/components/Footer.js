@@ -46,10 +46,6 @@ const Footer = () => {
                 <span className="logo-text">Abdullah</span>
                 <span className="logo-accent">Qadeer</span>
               </div>
-              <p className="brand-description">
-                Software Engineer specializing in Unity, VR/AR, and cutting-edge technologies. 
-                Let's build something amazing together.
-              </p>
             </div>
 
             <div className="footer-nav">
@@ -82,7 +78,7 @@ const Footer = () => {
               </div>
               <div className="availability">
                 <div className="status-indicator"></div>
-                <span>Available for new projects</span>
+                <span>Available for new projects and roles.</span>
               </div>
             </div>
           </div>

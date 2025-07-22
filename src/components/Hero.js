@@ -111,8 +111,8 @@ const Hero = () => {
             
             <motion.p className="hero-description" variants={itemVariants}>
               Passionate software engineer with 5+ years of experience in Unity game development, 
-              VR/AR technologies, .NET Core, and AI integration. I create immersive digital experiences 
-              that push the boundaries of technology.
+              VR/AR technologies, Multiplayer Game Development, .NET Core, and AI integration. I create immersive digital experiences 
+              that push the boundaries of technologies.
             </motion.p>
             
             <motion.div className="hero-stats" variants={itemVariants}>
@@ -149,8 +149,8 @@ const Hero = () => {
               animate="float"
             >
               <div className="tech-orbit">
-                <div className="tech-icon tech-unity">U</div>
-                <div className="tech-icon tech-csharp">C#</div>
+                <div className="tech-icon tech-unity">Unity</div>
+                <div className="tech-icon tech-csharp">.NET</div>
                 <div className="tech-icon tech-vr">VR</div>
                 <div className="tech-icon tech-ai">AI</div>
               </div>

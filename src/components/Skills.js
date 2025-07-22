@@ -19,6 +19,7 @@ const Skills = () => {
         { name: "C#", level: 90 },
         { name: "Game Design", level: 85 },
         { name: "Multiplayer Game Development", level: 85 },
+        { name: "Game Publishing", level: 85 },
       ]
     },
     {
@@ -51,12 +52,17 @@ const Skills = () => {
       ]
     },
     {
-      title: "AI Prompt Engineering",
+      title: "Additional Experiences",
       icon: FiSmartphone,
       skills: [
         { name: "ChatGPT API", level: 85 },
-        { name: "Claude API", level: 50 },
-        { name: "Gemini API", level: 60 }
+        { name: "CI/CD", level: 85 },
+        { name: "Azure", level: 55 },
+        { name: "Stripe", level: 80 },
+        { name: "Alpha Vantage API", level: 80 },
+        { name: "React js", level: 50 },
+        { name: "Git", level: 80 },
+        { name: "GitHub", level: 80 },
       ]
     }
   ];

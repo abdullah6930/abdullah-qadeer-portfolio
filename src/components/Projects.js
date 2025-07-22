@@ -12,9 +12,9 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "VR Adventure Game",
-      description: "Immersive VR game built with Unity and Oculus SDK featuring realistic physics and interactive environments.",
-      technologies: ["Unity 3D", "C#", "VR", "Oculus SDK"],
+      title: "Gemini AI Trader",
+      description: "Developed a complete AI Trading Strategy SaaS using ChatGPT, ASP.NET, React js, PostgreSQL, Alpha Vantage API, and Stripe.",
+      technologies: ["React js", ".NET Core", "PostgreSQL", "Azure"],
       github: "https://github.com/abdullah6930/vr-adventure",
       demo: "https://vr-adventure-demo.com",
       featured: true
@@ -77,7 +77,7 @@ const Projects = () => {
           animate={inView ? "visible" : "hidden"}
         >
           <motion.div className="section-header" variants={itemVariants}>
-            <h2 className="section-title">Featured Projects</h2>
+            <h2 className="section-title">Projects</h2>
             <p className="section-subtitle">
               A showcase of my recent work in game development, VR/AR, and AI integration
             </p>
