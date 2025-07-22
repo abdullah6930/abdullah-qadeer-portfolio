@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiCalendar, FiMapPin } from 'react-icons/fi';
+import { FiCalendar, FiMapPin, FiLinkedin } from 'react-icons/fi';
 import './Experience.css';
 
 const Experience = () => {
@@ -17,7 +17,8 @@ const Experience = () => {
       period: "04/2022 - Present",
       location: "Rawalpindi, Pakistan",
       description: "",
-      technologies: ["Unity 3D", "C#", "VR/AR", "Photon", ".NET", "WebGL", "GenAI", "Git"]
+      technologies: ["Unity 3D", "C#", "VR/AR", "Photon", ".NET", "WebGL", "GenAI", "Git"],
+      linkedinUrl: "https://www.linkedin.com/company/arthur-technologies/"
     },
     {
       company: "The Knights Pvt Ltd",
@@ -25,7 +26,8 @@ const Experience = () => {
       period: "07/2021 - 04/2022",
       location: "Rawalpindi, Pakistan",
       description: "Developed interactive applications and games using Unity. Worked on Monetization, Analytics and Gameplay development.",
-      technologies: ["Unity", "C#", "Photon", "Firebase Services", "Git"]
+      technologies: ["Unity", "C#", "Photon", "Firebase Services", "Git"],
+      linkedinUrl: "https://www.linkedin.com/company/theknights/"
     },
     {
       company: "Plasma IT Solutions Pvt Ltd",
@@ -33,7 +35,8 @@ const Experience = () => {
       period: "10/2020 - 06/2021",
       location: "Islamabad, Pakistan",
       description: "Worked on all aspects of game development, including gameplay, UI, and Optimization.",
-      technologies: ["Unity", "C#", "Firebase Services"]
+      technologies: ["Unity", "C#", "Firebase Services"],
+      linkedinUrl: "https://www.linkedin.com/company/plasma-it-solutions/"
     },
     {
       company: "StackBuffers Pvt Ltd",
@@ -41,7 +44,8 @@ const Experience = () => {
       period: "10/2019 - 01/2020",
       location: "Islamabad, Pakistan",
       description: "Started my career in game development, Developed complete multiplayer games using Unity, Photon and Firebase Services.",
-      technologies: ["Unity", "C#", "Firebase Services", "Photon"]
+      technologies: ["Unity", "C#", "Firebase Services", "Photon"],
+      linkedinUrl: "https://www.linkedin.com/company/stackbufferstechnologies/"
     }
   ];
 
@@ -97,8 +101,21 @@ const Experience = () => {
                 
                 <div className="timeline-content">
                   <div className="experience-header">
-                    <h3 className="position">{exp.position}</h3>
-                    <h4 className="company">{exp.company}</h4>
+                    <div className="header-left">
+                      <h3 className="position">{exp.position}</h3>
+                      <h4 className="company">{exp.company}</h4>
+                    </div>
+                    <div className="header-right">
+                      <a 
+                        href={exp.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="linkedin-btn"
+                        title={`${exp.company} on LinkedIn`}
+                      >
+                        <FiLinkedin />
+                      </a>
+                    </div>
                   </div>
                   
                   <div className="experience-meta">
