@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import emailjs from '@emailjs/browser';
 import { 
   FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub, FiExternalLink,
   FiSend, FiUser, FiMessageSquare, FiCheck, FiX
@@ -112,9 +113,27 @@ const Contact = () => {
     
     setFormStatus('sending');
     
-    // Simulate form submission
+    // EmailJS configuration - replace with your actual IDs
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'your_service_id';
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'your_template_id';
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'your_public_key';
+    
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Abdullah Qadeer',
+          reply_to: formData.email
+        },
+        publicKey
+      );
+      
+      console.log('Email sent successfully:', result.text);
       setFormStatus('success');
       setFormData({
         name: '',
@@ -123,6 +142,7 @@ const Contact = () => {
         message: ''
       });
     } catch (error) {
+      console.error('EmailJS Error:', error);
       setFormStatus('error');
     }
     
