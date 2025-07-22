@@ -157,7 +157,19 @@ const Hero = () => {
               <div className="central-avatar">
                 <div className="avatar-ring"></div>
                 <div className="avatar-core">
-                  <span className="avatar-text">AQ</span>
+                  <img 
+                    src="/images/profile/profile-picture.jpg" 
+                    alt="Abdullah Qadeer - Software Engineer"
+                    className="profile-picture"
+                    onError={(e) => {
+                      // Fallback to initials if image fails to load
+                      e.target.style.display = 'none';
+                      e.target.nextElementSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="avatar-fallback">
+                    <span className="avatar-text">AQ</span>
+                  </div>
                 </div>
               </div>
             </motion.div>
