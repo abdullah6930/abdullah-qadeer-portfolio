@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiGithub, FiLinkedin, FiExternalLink } from 'react-icons/fi';
 import './Header.css';
 
@@ -40,7 +40,12 @@ const Header = () => {
     const element = document.querySelector(sectionId);
     console.log('Found element:', element);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = 80; // Account for fixed header
+      const elementPosition = element.offsetTop - headerHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     } else {
       console.error('Element not found:', sectionId);
     }
@@ -48,7 +53,10 @@ const Header = () => {
 
   const handleNavClick = (href) => {
     setIsMenuOpen(false);
-    scrollToSection(href);
+    // Small delay to allow menu to close on mobile
+    setTimeout(() => {
+      scrollToSection(href);
+    }, 100);
   };
 
   return (
@@ -129,41 +137,60 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <motion.nav 
-          className={`nav-mobile ${isMenuOpen ? 'nav-mobile-open' : ''}`}
-          initial={false}
-          animate={{ 
-            height: isMenuOpen ? 'auto' : 0,
-            opacity: isMenuOpen ? 1 : 0
-          }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="nav-mobile-content">
-            {navItems.map((item, index) => (
-              <motion.li
-                key={item.name}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ 
-                  opacity: isMenuOpen ? 1 : 0, 
-                  x: isMenuOpen ? 0 : -50 
-                }}
-                transition={{ delay: isMenuOpen ? 0.1 * index : 0 }}
-              >
-                <a
-                  href={item.href}
-                  className="nav-link-mobile"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(item.href);
-                  }}
-                >
-                  {item.name}
-                </a>
-              </motion.li>
-            ))}
-            
-          </div>
-        </motion.nav>
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.nav 
+              className="nav-mobile nav-mobile-open"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+            <div className="nav-mobile-content">
+              <ul>
+                {navItems.map((item, index) => (
+                  <motion.li
+                    key={item.name}
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 * index }}
+                  >
+                    <a
+                      href={item.href}
+                      className="nav-link-mobile"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        console.log('Mobile nav clicked:', item.href);
+                        handleNavClick(item.href);
+                      }}
+                    >
+                      {item.name}
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+              
+              <div className="mobile-social">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    className="mobile-social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + 0.1 * index }}
+                  >
+                    <social.icon />
+                  </motion.a>
+                ))}
+              </div>
+                         </div>
+           </motion.nav>
+          )}
+        </AnimatePresence>
       </div>
     </motion.header>
   );
