@@ -162,25 +162,6 @@ const Header = () => {
               </motion.li>
             ))}
             
-            <motion.div 
-              className="mobile-social"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: isMenuOpen ? 1 : 0 }}
-              transition={{ delay: isMenuOpen ? 0.3 : 0 }}
-            >
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="mobile-social-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                >
-                  <social.icon />
-                </a>
-              ))}
-            </motion.div>
           </div>
         </motion.nav>
       </div>
