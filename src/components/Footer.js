@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiExternalLink, FiMail, FiArrowUp, FiHeart } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiExternalLink, FiBriefcase, FiHeart, FiArrowUp } from 'react-icons/fi';
 import './Footer.css';
 
 const Footer = () => {
@@ -29,7 +29,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/abdullah6930', label: 'GitHub' },
     { icon: FiLinkedin, href: 'https://linkedin.com/in/abdullahqadeerdev', label: 'LinkedIn' },
-    { icon: FiExternalLink, href: 'https://www.fiverr.com/users/abdullah6930', label: 'Fiverr' }
+    { icon: FiBriefcase, href: 'https://www.fiverr.com/users/abdullah6930', label: 'Fiverr' }
   ];
 
   return (

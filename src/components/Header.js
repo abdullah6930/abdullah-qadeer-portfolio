@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiGithub, FiLinkedin, FiExternalLink } from 'react-icons/fi';
+import { FiMenu, FiX, FiGithub, FiLinkedin, FiExternalLink, FiBriefcase } from 'react-icons/fi';
 import './Header.css';
 
 const Header = () => {
@@ -28,7 +28,7 @@ const Header = () => {
   const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/abdullah6930', label: 'GitHub' },
     { icon: FiLinkedin, href: 'https://linkedin.com/in/abdullahqadeerdev', label: 'LinkedIn' },
-    { icon: FiExternalLink, href: 'https://www.fiverr.com/users/abdullah6930', label: 'Fiverr' }
+    { icon: FiBriefcase, href: 'https://www.fiverr.com/users/abdullah6930', label: 'Fiverr' }
   ];
 
   const toggleMenu = () => {
