@@ -16,9 +16,8 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
+  const navigationLinks = [
     { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
@@ -81,7 +80,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="nav-desktop">
-            {navItems.map((item, index) => (
+            {navigationLinks.map((item, index) => (
               <motion.a
                 key={item.name}
                 href={item.href}
@@ -148,7 +147,7 @@ const Header = () => {
             >
             <div className="nav-mobile-content">
               <ul>
-                {navItems.map((item, index) => (
+                {navigationLinks.map((item, index) => (
                   <motion.li
                     key={item.name}
                     initial={{ opacity: 0, x: -50 }}
