@@ -2,45 +2,9 @@
   "short_name": "Abdullah Qadeer",
   "name": "Abdullah Qadeer - Software Engineer Portfolio",
   "description": "Software Engineer specializing in Unity, .NET Core, VR/AR, AI, and Game Development",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#0070f3",
   "background_color": "#0a0a0a",
-  "orientation": "portrait-primary",
-  "scope": "/",
-  "lang": "en-US",
-  "categories": ["portfolio", "developer", "software", "engineering"],
-  "shortcuts": [
-    {
-      "name": "Projects",
-      "short_name": "Projects",
-      "description": "View my portfolio projects",
-      "url": "/#projects",
-      "icons": [
-        {
-          "src": "favicon.ico",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "Contact",
-      "short_name": "Contact",
-      "description": "Get in touch with me",
-      "url": "/#contact",
-      "icons": [
-        {
-          "src": "favicon.ico",
-          "sizes": "192x192"
-        }
-      ]
-    }
-  ]
+  "scope": "/"
 } 
