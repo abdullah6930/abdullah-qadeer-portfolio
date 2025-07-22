@@ -135,7 +135,7 @@ const Hero = () => {
                 <FiMail />
                 Get In Touch
               </a>
-              <a href="/Abdullah-Qadeer-Resume.pdf" className="btn btn-secondary" download>
+              <a href="/Abdullah Qadeer - Software Engineer.pdf" className="btn btn-secondary" download>
                 <FiDownload />
                 Download CV
               </a>
