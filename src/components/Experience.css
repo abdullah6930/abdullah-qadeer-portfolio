@@ -162,10 +162,10 @@
   gap: var(--spacing-sm);
 }
 
-.tech-tag {
+.experience .tech-tag {
   background: rgba(0, 112, 243, 0.1);
-  border: 1px solid rgba(0, 112, 243, 0.3);
-  color: var(--primary-color);
+  border: var(--secondary-color);
+  color: white;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: 6px;
   font-size: 0.75rem;

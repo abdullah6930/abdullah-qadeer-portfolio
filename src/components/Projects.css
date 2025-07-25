@@ -144,9 +144,9 @@
 }
 
 .tech-badge {
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid rgba(124, 58, 237, 0.3);
-  color: var(--secondary-color);
+  background: rgba(0, 112, 243, 0.1);
+  border: var(--secondary-color);
+  color: white;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: 6px;
   font-size: 0.75rem;
@@ -291,12 +291,12 @@
 }
 
 .tech-tag {
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid rgba(124, 58, 237, 0.3);
-  color: var(--secondary-color);
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: 8px;
-  font-size: 0.875rem;
+  background: rgba(0, 112, 243, 0.1);
+  border: var(--secondary-color);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 6px;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
