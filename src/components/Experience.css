@@ -165,7 +165,7 @@
 .experience .tech-tag {
   background: rgba(0, 112, 243, 0.1);
   border: var(--secondary-color);
-  color: white;
+  color: var(--text-secondary);
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: 6px;
   font-size: 0.75rem;
