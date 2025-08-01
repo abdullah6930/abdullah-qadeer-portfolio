@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiCalendar, FiMapPin, FiLinkedin } from 'react-icons/fi';
+import { FiCalendar, FiMapPin, FiLinkedin, FiGlobe } from 'react-icons/fi';
 import './Experience.css';
 
 const Experience = () => {
@@ -13,12 +13,23 @@ const Experience = () => {
   const experiences = [
     {
       company: "Arthur Technologies GmbH",
-      position: "Unity Developer",
+      position: "XR & Backend Developer",
       period: "04/2022 - Present",
       location: "Rawalpindi, Pakistan",
       description: "",
       technologies: ["Unity 3D", "C#", "VR/AR", "Photon", ".NET", "WebGL", "GenAI", "Git"],
-      linkedinUrl: "https://www.linkedin.com/company/arthur-technologies/"
+      linkedinUrl: "https://www.linkedin.com/company/arthur-technologies/",
+      featured: true
+    },
+    {
+      company: "Boxes Labs",
+      position: "Founder & Software Developer",
+      period: "2019 - Present",
+      location: "Rawalpindi, Pakistan",
+      description: "Self employed software developer, working on various Indie games & Apps.",
+      technologies: ["Unity 3D", "C#", "VR/AR", "Photon", ".NET", "WebGL", "GenAI", "Git"],
+      website: "https://play.google.com/store/apps/dev?id=8857946449268136423",
+      featured: true
     },
     {
       company: "The Knights Pvt Ltd",
@@ -99,22 +110,35 @@ const Experience = () => {
                   {index < experiences.length - 1 && <div className="marker-line"></div>}
                 </div>
                 
-                <div className="timeline-content">
+                <div className={`timeline-content ${exp.featured ? 'featured' : ''}`}>
                   <div className="experience-header">
                     <div className="header-left">
                       <h3 className="position">{exp.position}</h3>
                       <h4 className="company">{exp.company}</h4>
                     </div>
                     <div className="header-right">
-                      <a 
-                        href={exp.linkedinUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="linkedin-btn"
-                        title={`${exp.company} on LinkedIn`}
-                      >
-                        <FiLinkedin />
-                      </a>
+                      {exp.linkedinUrl && (
+                        <a 
+                          href={exp.linkedinUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="linkedin-btn"
+                          title={`${exp.company} on LinkedIn`}
+                        >
+                          <FiLinkedin />
+                        </a>
+                      )}
+                      {exp.website && (
+                        <a 
+                          href={exp.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="linkedin-btn"
+                          title={`Visit ${exp.company} website`}
+                        >
+                          <FiGlobe />
+                        </a>
+                      )}
                     </div>
                   </div>
                   

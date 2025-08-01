@@ -49,12 +49,18 @@
   flex: 1;
   backdrop-filter: blur(20px);
   transition: all var(--transition-normal);
+  position: relative;
 }
 
 .timeline-content:hover {
   border-color: var(--primary-color);
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 112, 243, 0.1);
+}
+
+.timeline-content.featured {
+  border-color: var(--accent-color);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(0, 210, 255, 0.05) 100%);
 }
 
 .experience-header {
