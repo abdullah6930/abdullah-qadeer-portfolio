@@ -50,18 +50,18 @@ const Projects = () => {
       category: "Freelance Games",
       featured: true,
       images: [
-        "/images/projects/snake-online/sneak1.png",
-        "/images/projects/snake-online/sneak2.png",
-        "/images/projects/snake-online/sneak3.png",
-        "/images/projects/snake-online/sneak4.png",
-        "/images/projects/snake-online/sneak5.png",
+        "/images/projects/snake-online/sneak1.jpg",
+        "/images/projects/snake-online/sneak2.jpg",
+        "/images/projects/snake-online/sneak3.jpg",
+        "/images/projects/snake-online/sneak4.jpg",
+        "/images/projects/snake-online/sneak5.jpg",
       ],
       thumbnails: [
-        "/images/projects/snake-online/Thumbnails/sneak1.png",
-        "/images/projects/snake-online/Thumbnails/sneak2.png",
-        "/images/projects/snake-online/Thumbnails/sneak3.png",
-        "/images/projects/snake-online/Thumbnails/sneak4.png",
-        "/images/projects/snake-online/Thumbnails/sneak5.png",
+        "/images/projects/snake-online/Thumbnails/sneak1.jpg",
+        "/images/projects/snake-online/Thumbnails/sneak2.jpg",
+        "/images/projects/snake-online/Thumbnails/sneak3.jpg",
+        "/images/projects/snake-online/Thumbnails/sneak4.jpg",
+        "/images/projects/snake-online/Thumbnails/sneak5.jpg",
       ],
       videos: [
       ]
