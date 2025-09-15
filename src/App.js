@@ -16,8 +16,8 @@ function App() {
         <Header />
         <main>
           <Hero />
-          <Experience />
           <Projects />
+          <Experience />
           <Skills />
           <Contact />
         </main>

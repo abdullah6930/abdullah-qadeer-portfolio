@@ -15,7 +15,7 @@ const Projects = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const categories = ['All', 'Enterprise Systems', 'Indie Games', 'Open Source'];
+  const categories = ['All', 'Freelance Games', 'Enterprise Systems', 'Indie Games', 'Open Source'];
 
   const projects = [
     {
@@ -40,7 +40,34 @@ const Projects = () => {
       ]
     },
     {
-      title: "Subway Traffic Racer (Previously Toon Racer 3D)",
+      title: "Snake Online",
+      description: "A thrilling multiplayer snake battle game where players compete in real-time to become the longest snake on the battlefield.",
+      fullDescription: "Snake Online is a sophisticated multiplayer snake battle game built with enterprise-grade architecture and real-time networking capabilities. The game features seamless multiplayer gameplay where players compete in real-time battles to become the longest snake on the battlefield. Built with Unity and powered by Photon Quantum for deterministic networking, the game ensures smooth, lag-free multiplayer experiences. The backend infrastructure includes a React.js admin portal for game management, MongoDB for data persistence, and a robust server architecture running on AWS EC2 instances. Multiple AWS Lambda functions handle various game services including leaderboard management, server maintenance, and automated game operations. Key features include: Real-time multiplayer battles with Photon Quantum networking; Global leaderboards powered by AWS Lambda functions; React.js admin portal for game management and monitoring; MongoDB database for player data and game statistics; AWS EC2 server infrastructure for reliable game hosting; Automated server maintenance and monitoring systems; Cross-platform compatibility between mobile and web; Scalable architecture supporting hundreds of concurrent players; Real-time game analytics and player behavior tracking; Customizable snake skins and game modes. The game represents a full-stack development project showcasing modern game development practices with cloud infrastructure and real-time networking.",
+      technologies: ["Unity", "Photon Quantum", "React.js", "MongoDB", "AWS EC2", "AWS Lambda", "Node.js"],
+      website: "https://snakeonline.io/",
+      playStore: "https://play.google.com/store/apps/details?id=io.multiplayer.snake.worm.online",
+      appleStore: "https://apps.apple.com/us/app/online-snake-io-worm-clash/id6749900178",
+      category: "Freelance Games",
+      featured: true,
+      images: [
+        "/images/projects/snake-online/sneak1.png",
+        "/images/projects/snake-online/sneak2.png",
+        "/images/projects/snake-online/sneak3.png",
+        "/images/projects/snake-online/sneak4.png",
+        "/images/projects/snake-online/sneak5.png",
+      ],
+      thumbnails: [
+        "/images/projects/snake-online/Thumbnails/sneak1.png",
+        "/images/projects/snake-online/Thumbnails/sneak2.png",
+        "/images/projects/snake-online/Thumbnails/sneak3.png",
+        "/images/projects/snake-online/Thumbnails/sneak4.png",
+        "/images/projects/snake-online/Thumbnails/sneak5.png",
+      ],
+      videos: [
+      ]
+    },
+    {
+      title: "Subway Traffic Racer",
       description: "A fast-paced 3D endless car racing game where you play as a car thief.",
       fullDescription: "Subway Traffic Racer is a fast-paced 3D subway traffic racing game where you play as a car thief, weaving through busy subway streets to evade the police and dodge oncoming vehicles. Outsmart your pursuers and navigate challenging obstacles to reach your destination and complete your daring escape.",
       technologies: ["Unity", "Firebase"],
@@ -314,6 +341,21 @@ const Projects = () => {
                         />
                       </a>
                     )}
+                    {project.appleStore && (
+                      <a 
+                        href={project.appleStore} 
+                        className="apple-store-badge"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <img 
+                          src="/images/badges/app-store-badge.svg" 
+                          alt="Download on the App Store"
+                          className="apple-badge-img"
+                        />
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -367,15 +409,22 @@ const Projects = () => {
                   <div className="modal-images">
                     <h3>Screenshots</h3>
                     <div className="images-grid">
-                      {selectedProject.images.map((image, i) => (
-                        <img 
-                          key={i} 
-                          src={image} 
-                          alt={`${selectedProject.title} screenshot ${i + 1}`}
-                          onClick={() => openLightbox(selectedProject.images, i)}
-                          style={{ cursor: 'pointer' }}
-                        />
-                      ))}
+                      {selectedProject.images.map((image, i) => {
+                        const thumbnailSrc = selectedProject.thumbnails && selectedProject.thumbnails[i] 
+                          ? selectedProject.thumbnails[i] 
+                          : image;
+                        return (
+                          <img 
+                            key={i} 
+                            src={thumbnailSrc} 
+                            alt={`${selectedProject.title} screenshot ${i + 1}`}
+                            onClick={() => openLightbox(selectedProject.images, i)}
+                            style={{ cursor: 'pointer' }}
+                            className="thumbnail-image"
+                            data-full-src={image}
+                          />
+                        );
+                      })}
                     </div>
                   </div>
                 )}
@@ -433,6 +482,20 @@ const Projects = () => {
                         src="/images/badges/google-play-badge.png" 
                         alt="Get it on Google Play"
                         className="play-badge-img"
+                      />
+                    </a>
+                  )}
+                  {selectedProject.appleStore && (
+                    <a 
+                      href={selectedProject.appleStore} 
+                      className="apple-store-badge modal-apple-badge"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img 
+                        src="/images/badges/app-store-badge.svg" 
+                        alt="Download on the App Store"
+                        className="apple-badge-img"
                       />
                     </a>
                   )}
