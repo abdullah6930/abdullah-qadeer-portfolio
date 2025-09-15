@@ -27,14 +27,14 @@ const Projects = () => {
       category: "Enterprise Systems",
       featured: true,
       images: [
-        "/images/projects/gemini-ai-trader/Landing page new user.png",
-        "/images/projects/gemini-ai-trader/Dashboard page.png",
-        "/images/projects/gemini-ai-trader/AI Chat.png",
-        "/images/projects/gemini-ai-trader/StockDetails_Candlestick.png",
-        "/images/projects/gemini-ai-trader/Pre Market Analysis.png",
-        "/images/projects/gemini-ai-trader/Market News.png",
-        "/images/projects/gemini-ai-trader/AI Chat Mobile View.png",
-        "/images/projects/gemini-ai-trader/Stocks Mobile View.png"
+        "/images/projects/gemini-ai-trader/Landing page new user.jpg",
+        "/images/projects/gemini-ai-trader/Dashboard page.jpg",
+        "/images/projects/gemini-ai-trader/AI Chat.jpg",
+        "/images/projects/gemini-ai-trader/StockDetails_Candlestick.jpg",
+        "/images/projects/gemini-ai-trader/Pre Market Analysis.jpg",
+        "/images/projects/gemini-ai-trader/Market News.jpg",
+        "/images/projects/gemini-ai-trader/AI Chat Mobile View.jpg",
+        "/images/projects/gemini-ai-trader/Stocks Mobile View.jpg"
       ],
       videos: [
       ]
