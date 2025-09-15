@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiDownload, FiMail, FiArrowDown } from 'react-icons/fi';
 import './Hero.css';
+import { trackCvDownload } from '../firebase';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
@@ -135,7 +136,7 @@ const Hero = () => {
                 <FiMail />
                 Get In Touch
               </a>
-              <a href="/Abdullah Qadeer - Unity Game Developer.pdf" className="btn btn-secondary" download>
+              <a href="/Abdullah Qadeer - Unity Game Developer.pdf" className="btn btn-secondary" download onClick={() => trackCvDownload()}>
                 <FiDownload />
                 Download CV
               </a>

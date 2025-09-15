@@ -11,6 +11,7 @@ A modern, responsive portfolio website built with React.js showcasing my skills 
 - **Interactive Components**: Dynamic typing animation, scroll-triggered animations, modal popups
 - **Project Showcase**: Categorized projects with image galleries and video integration
 - **Functional Contact Form**: Real email sending with EmailJS integration
+- **Analytics Integration**: Firebase Analytics for tracking page views and user interactions
 - **SEO Optimized**: Complete SEO implementation with sitemap, robots.txt, and structured data
 - **PWA Ready**: Progressive Web App with manifest for app-like experience
 
@@ -19,6 +20,7 @@ A modern, responsive portfolio website built with React.js showcasing my skills 
 - **React.js** - UI library with hooks and components
 - **Framer Motion** - Animation library for smooth transitions
 - **EmailJS** - Client-side email sending service
+- **Firebase Analytics** - User behavior tracking and analytics
 - **CSS3** - Custom styling with glass morphism effects
 - **Firebase Hosting** - Production deployment with CDN
 - **SEO Tools** - XML sitemap, robots.txt, structured data
@@ -45,7 +47,21 @@ A modern, responsive portfolio website built with React.js showcasing my skills 
    REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
    ```
 
-4. **Start development server**
+4. **Set up Firebase Analytics (optional)**
+   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
+   - Enable Google Analytics in your Firebase project
+   - Add your Firebase config to `.env` file:
+   ```env
+   REACT_APP_FIREBASE_API_KEY=your_api_key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+   REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+   REACT_APP_FIREBASE_APP_ID=your_app_id
+   REACT_APP_FIREBASE_MEASUREMENT_ID=your_measurement_id
+   ```
+
+5. **Start development server**
    ```bash
    npm start
    ```
@@ -62,6 +78,9 @@ src/
 │   ├── Skills.js       # Skills section
 │   ├── Contact.js      # Contact form with EmailJS
 │   └── Footer.js       # Footer component
+├── config/             # Configuration files
+│   └── firebase.js     # Firebase configuration
+├── firebase.js         # Firebase initialization & analytics
 ├── App.js              # Main App component
 └── index.js            # Entry point
 ```

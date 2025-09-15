@@ -6,6 +6,7 @@ import {
   FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub, FiExternalLink,
   FiSend, FiUser, FiMessageSquare, FiCheck, FiX
 } from 'react-icons/fi';
+import { trackContactForm } from '../firebase';
 import './Contact.css';
 
 const Contact = () => {
@@ -108,8 +109,18 @@ const Contact = () => {
     e.preventDefault();
     
     if (!validateForm()) {
+      // Track form validation failure
+      trackContactForm('validation_failed', {
+        validation_errors: Object.keys(errors).length
+      });
       return;
     }
+    
+    // Track form submission attempt
+    trackContactForm('submit', {
+      subject: formData.subject,
+      message_length: formData.message.length
+    });
     
     setFormStatus('sending');
     
@@ -135,6 +146,14 @@ const Contact = () => {
       
       console.log('Email sent successfully:', result.text);
       setFormStatus('success');
+      
+      // Track successful form submission
+      trackContactForm('success', {
+        subject: formData.subject,
+        message_length: formData.message.length,
+        response_status: result.status
+      });
+      
       setFormData({
         name: '',
         email: '',
@@ -144,6 +163,14 @@ const Contact = () => {
     } catch (error) {
       console.error('EmailJS Error:', error);
       setFormStatus('error');
+      
+      // Track failed form submission
+      trackContactForm('error', {
+        subject: formData.subject,
+        message_length: formData.message.length,
+        error_code: error.code || 'unknown',
+        error_message: error.text || error.message || 'Unknown error'
+      });
     }
     
     setTimeout(() => setFormStatus(''), 5000);

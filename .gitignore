@@ -329,4 +329,7 @@ Temporary Items
 .apdisk
 
 # Custom additions for this project
-# Add any project-specific ignores here 
+# Add any project-specific ignores here
+
+# Firebase configuration files (contains sensitive data)
+src/config/firebase.js 
