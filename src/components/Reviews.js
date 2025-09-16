@@ -103,7 +103,7 @@ const Reviews = () => {
                 <div className="stars">
                   {renderStars(5)}
                 </div>
-                <span className="review-count">9 reviews</span>
+                <span className="review-count">10 reviews</span>
               </span>
               <a 
                 href="https://www.fiverr.com/abdullah6930" 
