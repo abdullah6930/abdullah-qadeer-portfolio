@@ -18,16 +18,16 @@ const Header = () => {
 
   const navigationLinks = [
     { name: 'Home', href: '#hero' },
-    { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Reviews', href: '#reviews' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' }
   ];
 
   const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/abdullah6930', label: 'GitHub' },
-    { icon: FiLinkedin, href: 'https://linkedin.com/in/abdullahqadeerdev', label: 'LinkedIn' },
-    { icon: FiBriefcase, href: 'https://www.fiverr.com/users/abdullah6930', label: 'Fiverr' }
+    { icon: FiLinkedin, href: 'https://linkedin.com/in/abdullahqadeerdev', label: 'LinkedIn' }
   ];
 
   const toggleMenu = () => {
